@@ -212,7 +212,7 @@ brute_force()	# WE1rd_v1R7UaL_M@chINE_Ev3R
 
 主函数全是windows api，很多关于媒体读写操作的，正常跑完会获得一个`嘲讽.jpeg`
 
-<img src="E:\CTF-Learning\Contests\TetCTF\Reverse\hidden\flag.jpeg" alt="flag" style="zoom:25%;" />
+<img src=".\Reverse\hidden\flag.jpeg" alt="flag" style="zoom:25%;" />
 
 分析下主函数代码，截取部分分析
 
