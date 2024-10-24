@@ -1,0 +1,283 @@
+  1           0 LOAD_CONST               0 (-1)
+              3 LOAD_CONST               1 (None)
+              6 IMPORT_NAME              0 (os)
+              9 STORE_NAME               0 (os)
+
+  4          12 LOAD_CONST               2 (0)
+             15 STORE_NAME               1 (a)
+
+  5          18 LOAD_NAME                2 (input)
+             21 CALL_FUNCTION            0
+             24 STORE_NAME               3 (flag)
+
+  6          27 SETUP_LOOP              36 (to 66)
+             30 LOAD_NAME                4 (range)
+             33 LOAD_NAME                5 (len)
+             36 LOAD_NAME                3 (flag)
+             39 CALL_FUNCTION            1
+             42 CALL_FUNCTION            1
+             45 GET_ITER            
+        >>   46 FOR_ITER                16 (to 65)
+             49 STORE_NAME               6 (i)
+
+  7          52 LOAD_NAME                1 (a)
+             55 LOAD_CONST               3 (1)
+             58 INPLACE_ADD         
+             59 STORE_NAME               1 (a)
+             62 JUMP_ABSOLUTE           46
+        >>   65 POP_BLOCK           
+
+  9     >>   66 LOAD_NAME                1 (a)
+             69 LOAD_CONST               4 (32)
+             72 COMPARE_OP               3 (!=)
+             75 POP_JUMP_IF_FALSE       93
+
+ 10          78 LOAD_CONST               5 ('error')
+             81 PRINT_ITEM          
+             82 PRINT_NEWLINE       
+
+ 11          83 LOAD_NAME                7 (exit)
+             86 CALL_FUNCTION            0
+             89 POP_TOP             
+             90 JUMP_FORWARD             0 (to 93)
+
+ 13     >>   93 LOAD_NAME                3 (flag)
+             96 LOAD_CONST               2 (0)
+             99 BINARY_SUBSCR       
+            100 LOAD_CONST               6 ('f')
+            103 COMPARE_OP               3 (!=)
+            106 POP_JUMP_IF_TRUE       189
+            109 LOAD_NAME                3 (flag)
+            112 LOAD_CONST               3 (1)
+            115 BINARY_SUBSCR       
+            116 LOAD_CONST               7 ('l')
+            119 COMPARE_OP               3 (!=)
+            122 POP_JUMP_IF_TRUE       189
+            125 LOAD_NAME                3 (flag)
+            128 LOAD_CONST               8 (2)
+            131 BINARY_SUBSCR       
+            132 LOAD_CONST               9 ('a')
+            135 COMPARE_OP               3 (!=)
+            138 POP_JUMP_IF_TRUE       189
+            141 LOAD_NAME                3 (flag)
+            144 LOAD_CONST              10 (3)
+            147 BINARY_SUBSCR       
+            148 LOAD_CONST              11 ('g')
+            151 COMPARE_OP               3 (!=)
+            154 POP_JUMP_IF_TRUE       189
+            157 LOAD_NAME                3 (flag)
+            160 LOAD_CONST              12 (4)
+            163 BINARY_SUBSCR       
+            164 LOAD_CONST              13 ('{')
+            167 COMPARE_OP               3 (!=)
+            170 POP_JUMP_IF_TRUE       189
+            173 LOAD_NAME                3 (flag)
+            176 LOAD_CONST              14 (31)
+            179 BINARY_SUBSCR       
+            180 LOAD_CONST              15 ('}')
+            183 COMPARE_OP               3 (!=)
+            186 POP_JUMP_IF_FALSE      204
+
+ 14     >>  189 LOAD_CONST               5 ('error')
+            192 PRINT_ITEM          
+            193 PRINT_NEWLINE       
+
+ 15         194 LOAD_NAME                7 (exit)
+            197 CALL_FUNCTION            0
+            200 POP_TOP             
+            201 JUMP_FORWARD             0 (to 204)
+
+ 17     >>  204 BUILD_LIST               0
+            207 STORE_NAME               8 (tmp)
+
+ 19         210 SETUP_LOOP              37 (to 250)
+            213 LOAD_NAME                4 (range)
+            216 LOAD_NAME                1 (a)
+            219 CALL_FUNCTION            1
+            222 GET_ITER            
+        >>  223 FOR_ITER                23 (to 249)
+            226 STORE_NAME               6 (i)
+
+ 20         229 LOAD_NAME                8 (tmp)
+            232 LOAD_ATTR                9 (append)
+            235 LOAD_NAME                3 (flag)
+            238 LOAD_NAME                6 (i)
+            241 BINARY_SUBSCR       
+            242 CALL_FUNCTION            1
+            245 POP_TOP             
+            246 JUMP_ABSOLUTE          223
+        >>  249 POP_BLOCK               tmp.append(flag[i])
+
+ 22     >>  250 SETUP_LOOP              44 (to 297)
+            253 LOAD_NAME                4 (range)
+            256 LOAD_NAME                1 (a)
+            259 CALL_FUNCTION            1
+            262 GET_ITER            
+        >>  263 FOR_ITER                30 (to 296)
+            266 STORE_NAME               6 (i)
+
+ 23         269 LOAD_NAME               10 (ord)
+            272 LOAD_NAME                8 (tmp)
+            275 LOAD_NAME                6 (i)
+            278 BINARY_SUBSCR       
+            279 CALL_FUNCTION            1
+            282 LOAD_CONST              16 (9)
+            285 BINARY_SUBTRACT     
+            286 LOAD_NAME                8 (tmp)
+            289 LOAD_NAME                6 (i)
+            292 STORE_SUBSCR        
+            293 JUMP_ABSOLUTE          263
+        >>  296 POP_BLOCK               tmp[i]=ord(tmp[i])-9
+
+ 25     >>  297 SETUP_LOOP              38 (to 338)
+            300 LOAD_NAME                4 (range)
+            303 LOAD_NAME                1 (a)
+            306 CALL_FUNCTION            1
+            309 GET_ITER            
+        >>  310 FOR_ITER                24 (to 337)
+            313 STORE_NAME               6 (i)
+
+ 26         316 LOAD_NAME                8 (tmp)
+            319 LOAD_NAME                6 (i)
+            322 BINARY_SUBSCR       
+            323 LOAD_CONST              17 (51)
+            326 BINARY_XOR          
+            327 LOAD_NAME                8 (tmp)
+            330 LOAD_NAME                6 (i)
+            333 STORE_SUBSCR        
+            334 JUMP_ABSOLUTE          310
+        >>  337 POP_BLOCK               tmp[i]=tmp[i]^51
+
+ 28     >>  338 SETUP_LOOP              38 (to 379)
+            341 LOAD_NAME                4 (range)
+            344 LOAD_NAME                1 (a)
+            347 CALL_FUNCTION            1
+            350 GET_ITER            
+        >>  351 FOR_ITER                24 (to 378)
+            354 STORE_NAME               6 (i)
+
+ 29         357 LOAD_NAME                8 (tmp)
+            360 LOAD_NAME                6 (i)
+            363 BINARY_SUBSCR       
+            364 LOAD_CONST              18 (8)
+            367 BINARY_ADD          
+            368 LOAD_NAME                8 (tmp)
+            371 LOAD_NAME                6 (i)
+            374 STORE_SUBSCR        
+            375 JUMP_ABSOLUTE          351
+        >>  378 POP_BLOCK               tmp[i]=tmp[i]+8
+
+ 31     >>  379 LOAD_NAME                8 (tmp)
+            382 LOAD_NAME                1 (a)
+            385 LOAD_CONST              10 (3)
+            388 BINARY_SUBTRACT     
+            389 BINARY_SUBSCR       
+            390 STORE_NAME              11 (tmp1)
+
+ 32         393 LOAD_NAME                8 (tmp)
+            396 LOAD_NAME                1 (a)
+            399 LOAD_CONST               8 (2)
+            402 BINARY_SUBTRACT     
+            403 BINARY_SUBSCR       
+            404 STORE_NAME              12 (tmp2)
+
+ 33         407 LOAD_NAME                8 (tmp)
+            410 LOAD_NAME                1 (a)
+            413 LOAD_CONST               3 (1)
+            416 BINARY_SUBTRACT     
+            417 BINARY_SUBSCR       
+            418 STORE_NAME              13 (tmp3)
+
+ 35         421 SETUP_LOOP              58 (to 482)
+            424 LOAD_NAME                4 (range)
+            427 LOAD_NAME                1 (a)
+            430 LOAD_CONST              10 (3)
+            433 BINARY_SUBTRACT     
+            434 CALL_FUNCTION            1
+            437 GET_ITER            
+        >>  438 FOR_ITER                40 (to 481)
+            441 STORE_NAME               6 (i)
+
+ 36         444 LOAD_NAME                8 (tmp)
+            447 LOAD_NAME                1 (a)
+            450 LOAD_CONST               3 (1)
+            453 BINARY_SUBTRACT     
+            454 LOAD_NAME                6 (i)
+            457 BINARY_SUBTRACT     
+            458 LOAD_CONST              10 (3)
+            461 BINARY_SUBTRACT     
+            462 BINARY_SUBSCR       
+            463 LOAD_NAME                8 (tmp)
+            466 LOAD_NAME                1 (a)
+            469 LOAD_CONST               3 (1)
+            472 BINARY_SUBTRACT     
+            473 LOAD_NAME                6 (i)
+            476 BINARY_SUBTRACT     
+            477 STORE_SUBSCR        
+            478 JUMP_ABSOLUTE          438
+        >>  481 POP_BLOCK               tmp[32-1-i]=tmp[32-1-i-3]
+
+ 38     >>  482 LOAD_NAME               13 (tmp3)
+            485 LOAD_NAME                8 (tmp)
+            488 LOAD_CONST               2 (0)
+            491 STORE_SUBSCR            tmp[0]=tmp3
+
+ 39         492 LOAD_NAME               12 (tmp2)
+            495 LOAD_NAME                8 (tmp)
+            498 LOAD_CONST               3 (1)
+            501 STORE_SUBSCR            tmp[1]=tmp2
+
+ 40         502 LOAD_NAME               11 (tmp1)
+            505 LOAD_NAME                8 (tmp)
+            508 LOAD_CONST               8 (2)
+            511 STORE_SUBSCR            tmp[2]=tmp1
+
+ 42         512 SETUP_LOOP              58 (to 573)
+            515 LOAD_NAME                4 (range)
+            518 LOAD_NAME                1 (a)
+            521 CALL_FUNCTION            1
+            524 GET_ITER            
+        >>  525 FOR_ITER                44 (to 572)
+            528 STORE_NAME               6 (i)
+
+ 43         531 LOAD_NAME                6 (i)
+            534 LOAD_CONST              19 (7)
+            537 BINARY_MODULO       
+            538 LOAD_CONST               3 (1)
+            541 COMPARE_OP               2 (==)
+            544 POP_JUMP_IF_FALSE      553
+
+ 44         547 JUMP_ABSOLUTE          525
+            550 JUMP_FORWARD             0 (to 553)
+
+ 45     >>  553 LOAD_NAME                8 (tmp)
+            556 LOAD_NAME                6 (i)
+            559 DUP_TOPX                 2
+            562 BINARY_SUBSCR       
+            563 LOAD_CONST              20 (119)
+            566 INPLACE_XOR         
+            567 ROT_THREE           
+            568 STORE_SUBSCR        
+            569 JUMP_ABSOLUTE          525
+        >>  572 POP_BLOCK           
+
+ 48     >>  573 LOAD_NAME               14 (open)
+            576 LOAD_CONST              21 ('out')
+            579 LOAD_CONST              22 ('w')
+            582 CALL_FUNCTION            2
+            585 SETUP_WITH              26 (to 614)
+            588 STORE_NAME              15 (f)
+
+ 49         591 LOAD_NAME               15 (f)
+            594 LOAD_ATTR               16 (write)
+            597 LOAD_NAME               17 (str)
+            600 LOAD_NAME                8 (tmp)
+            603 CALL_FUNCTION            1
+            606 CALL_FUNCTION            1
+            609 POP_TOP             
+            610 POP_BLOCK           
+            611 LOAD_CONST               1 (None)
+        >>  614 WITH_CLEANUP        
+            615 END_FINALLY         
+            616 LOAD_CONST               1 (None)
+            619 RETURN_VALUE        
