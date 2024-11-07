@@ -1,0 +1,2460 @@
+mruby 3.0.0 (2021-03-05)
+irep 0x61b0f77659b0 nregs=6 nlocals=2 pools=0 syms=14 reps=11 iseq=137
+local variable names:
+  R1:plain_text
+      000 OP_LOADNIL	R2		
+      002 OP_LOADNIL	R3		
+      004 OP_CLASS	R2	:Matrix
+      007 OP_EXEC	R2	I(0:0x61b0f776fa00)
+      010 OP_LOADNIL	R2		
+      012 OP_LOADNIL	R3		
+      014 OP_CLASS	R2	:SBox
+      017 OP_EXEC	R2	I(1:0x61b0f7783c00)
+      020 OP_LOADNIL	R2		
+      022 OP_LOADNIL	R3		
+      024 OP_CLASS	R2	:State
+      027 OP_EXEC	R2	I(2:0x61b0f77844d0)
+      030 OP_LOADNIL	R2		
+      032 OP_LOADNIL	R3		
+      034 OP_CLASS	R2	:Util
+      037 OP_EXEC	R2	I(3:0x61b0f7785170)
+      040 OP_LOADNIL	R2		
+      042 OP_LOADNIL	R3		
+      044 OP_CLASS	R2	:Consts
+      047 OP_EXEC	R2	I(4:0x61b0f77857a0)
+      050 OP_LOADNIL	R2		
+      052 OP_LOADNIL	R3		
+      054 OP_CLASS	R2	:Round
+      057 OP_EXEC	R2	I(5:0x61b0f7785c90)
+      060 OP_LOADNIL	R2		
+      062 OP_LOADNIL	R3		
+      064 OP_CLASS	R2	:Keys
+      067 OP_EXEC	R2	I(6:0x61b0f7785ec0)
+      070 OP_LOADNIL	R2		
+      072 OP_LOADNIL	R3		
+      074 OP_CLASS	R2	:Encryptor
+      077 OP_EXEC	R2	I(7:0x61b0f7786200)
+      080 OP_LOADNIL	R2		
+      082 OP_LOADNIL	R3		
+      084 OP_CLASS	R2	:Cipher
+      087 OP_EXEC	R2	I(8:0x61b0f77865f0)
+      090 OP_TCLASS	R2		
+      092 OP_METHOD	R3	I(9:0x61b0f7786a70)
+      095 OP_DEF	R2	:validchar
+      098 OP_TCLASS	R2		
+      100 OP_METHOD	R3	I(10:0x61b0f7786b90)
+      103 OP_DEF	R2	:check
+      106 OP_LOADSELF	R2		
+      108 OP_SEND	R2	:gets	0
+      112 OP_SEND	R2	:chomp	0
+      116 OP_MOVE	R1	R2		; R1:plain_text
+      119 OP_LOADSELF	R2		
+      121 OP_LOADSELF	R3		
+      123 OP_MOVE	R4	R1		; R1:plain_text
+      126 OP_SEND	R3	:check	1
+      130 OP_SEND	R2	:puts	1
+      134 OP_RETURN	R2		
+      136 OP_STOP
+
+irep 0x61b0f776fa00 nregs=3 nlocals=1 pools=0 syms=7 reps=6 iseq=71
+      000 OP_LOADSELF	R1		
+      002 OP_SCLASS	R1	
+      004 OP_METHOD	R2	I(0:0x61b0f7782f90)
+      007 OP_DEF	R1	:multiply
+      010 OP_LOADSELF	R1		
+      012 OP_SCLASS	R1	
+      014 OP_METHOD	R2	I(1:0x61b0f7783280)
+      017 OP_DEF	R1	:calc_sum
+      020 OP_LOADSELF	R1		
+      022 OP_SCLASS	R1	
+      024 OP_METHOD	R2	I(2:0x61b0f77833e0)
+      027 OP_DEF	R1	:extract_column
+      030 OP_LOADSELF	R1		
+      032 OP_SCLASS	R1	
+      034 OP_METHOD	R2	I(3:0x61b0f7783540)
+      037 OP_DEF	R1	:create_matrix
+      040 OP_LOADSELF	R1		
+      042 OP_SCLASS	R1	
+      044 OP_METHOD	R2	I(4:0x61b0f7783750)
+      047 OP_DEF	R1	:to_mat
+      050 OP_LOADSELF	R1		
+      052 OP_SEND	R1	:private	0
+      056 OP_LOADSELF	R1		
+      058 OP_SCLASS	R1	
+      060 OP_METHOD	R2	I(5:0x61b0f77838e0)
+      063 OP_DEF	R1	:gf2
+      066 OP_LOADSYM	R1	:gf2	
+      069 OP_RETURN	R1		
+
+irep 0x61b0f7782f90 nregs=9 nlocals=6 pools=0 syms=4 reps=2 iseq=49
+local variable names:
+  R1:matrix1
+  R2:matrix2
+  R3:pol
+  R4:&
+  R5:product
+      000 OP_ENTER	2:1:0:0:0:0:0
+      004 OP_JMP		010
+      007 OP_JMP		017
+      010 OP_LOADI16	R6	285	
+      014 OP_MOVE	R3	R6		; R3:pol
+      017 OP_GETCONST	R6	:Array
+      020 OP_MOVE	R7	R1		; R1:matrix1
+      023 OP_SEND	R7	:length	0
+      027 OP_BLOCK	R8	I(0:0x61b0f7783060)
+      030 OP_SENDB	R6	:new	1
+      034 OP_MOVE	R5	R6		; R5:product
+      037 OP_MOVE	R6	R1		; R1:matrix1
+      040 OP_BLOCK	R7	I(1:0x61b0f7783100)
+      043 OP_SENDB	R6	:each_index	0
+      047 OP_RETURN	R5			; R5:product
+
+irep 0x61b0f7783060 nregs=6 nlocals=2 pools=0 syms=4 reps=0 iseq=27
+local variable names:
+  R1:&
+      000 OP_ENTER	0:0:0:0:0:0:0
+      004 OP_GETCONST	R2	:Array
+      007 OP_GETUPVAR	R3	2	0
+      011 OP_LOADI_0	R4		
+      013 OP_SEND	R3	:[]	1
+      017 OP_SEND	R3	:length	0
+      021 OP_SEND	R2	:new	1
+      025 OP_RETURN	R2		
+
+irep 0x61b0f7783100 nregs=6 nlocals=3 pools=0 syms=2 reps=1 iseq=23
+local variable names:
+  R1:row
+  R2:&
+      000 OP_ENTER	1:0:0:0:0:0:0
+      004 OP_GETUPVAR	R3	2	0
+      008 OP_LOADI_0	R4		
+      010 OP_SEND	R3	:[]	1
+      014 OP_BLOCK	R4	I(0:0x61b0f77831b0)
+      017 OP_SENDB	R3	:each_index	0
+      021 OP_RETURN	R3		
+
+irep 0x61b0f77831b0 nregs=10 nlocals=5 pools=0 syms=4 reps=0 iseq=75
+local variable names:
+  R1:column
+  R2:&
+  R3:row_array
+  R4:arr
+      000 OP_ENTER	1:0:0:0:0:0:0
+      004 OP_GETUPVAR	R5	1	1
+      008 OP_GETUPVAR	R6	1	0
+      012 OP_SEND	R5	:[]	1
+      016 OP_MOVE	R3	R5		; R3:row_array
+      019 OP_LOADSELF	R5		
+      021 OP_GETUPVAR	R6	2	1
+      025 OP_MOVE	R7	R1		; R1:column
+      028 OP_SEND	R5	:extract_column	2
+      032 OP_MOVE	R4	R5		; R4:arr
+      035 OP_LOADSELF	R5		
+      037 OP_MOVE	R6	R3		; R3:row_array
+      040 OP_MOVE	R7	R4		; R4:arr
+      043 OP_GETUPVAR	R8	3	1
+      047 OP_SEND	R5	:calc_sum	3
+      051 OP_GETUPVAR	R6	5	1
+      055 OP_GETUPVAR	R7	1	0
+      059 OP_SEND	R6	:[]	1
+      063 OP_MOVE	R7	R1		; R1:column
+      066 OP_MOVE	R8	R5	
+      069 OP_SEND	R6	:[]=	2
+      073 OP_RETURN	R5		
+
+irep 0x61b0f7783280 nregs=8 nlocals=6 pools=0 syms=1 reps=1 iseq=18
+local variable names:
+  R1:row_array
+  R2:arr
+  R3:pol
+  R4:&
+  R5:product_s
+      000 OP_ENTER	3:0:0:0:0:0:0
+      004 OP_LOADI_0	R5			; R5:product_s
+      006 OP_MOVE	R6	R1		; R1:row_array
+      009 OP_BLOCK	R7	I(0:0x61b0f7783330)
+      012 OP_SENDB	R6	:each_index	0
+      016 OP_RETURN	R5			; R5:product_s
+
+irep 0x61b0f7783330 nregs=9 nlocals=3 pools=0 syms=3 reps=0 iseq=50
+local variable names:
+  R1:i
+  R2:&
+      000 OP_ENTER	1:0:0:0:0:0:0
+      004 OP_GETUPVAR	R3	5	0
+      008 OP_LOADSELF	R4		
+      010 OP_GETUPVAR	R5	1	0
+      014 OP_MOVE	R6	R1		; R1:i
+      017 OP_SEND	R5	:[]	1
+      021 OP_GETUPVAR	R6	2	0
+      025 OP_MOVE	R7	R1		; R1:i
+      028 OP_SEND	R6	:[]	1
+      032 OP_GETUPVAR	R7	3	0
+      036 OP_SEND	R4	:gf2	3
+      040 OP_SEND	R3	:^	1
+      044 OP_SETUPVAR	R3	5	0
+      048 OP_RETURN	R3		
+
+irep 0x61b0f77833e0 nregs=7 nlocals=5 pools=0 syms=3 reps=1 iseq=26
+local variable names:
+  R1:matrix
+  R2:column
+  R3:&
+  R4:arr
+      000 OP_ENTER	2:0:0:0:0:0:0
+      004 OP_GETCONST	R5	:Array
+      007 OP_SEND	R5	:new	0
+      011 OP_MOVE	R4	R5		; R4:arr
+      014 OP_MOVE	R5	R1		; R1:matrix
+      017 OP_BLOCK	R6	I(0:0x61b0f77834a0)
+      020 OP_SENDB	R5	:each_index	0
+      024 OP_RETURN	R4			; R4:arr
+
+irep 0x61b0f77834a0 nregs=7 nlocals=3 pools=0 syms=2 reps=0 iseq=33
+local variable names:
+  R1:row
+  R2:&
+      000 OP_ENTER	1:0:0:0:0:0:0
+      004 OP_GETUPVAR	R3	4	0
+      008 OP_GETUPVAR	R4	1	0
+      012 OP_MOVE	R5	R1		; R1:row
+      015 OP_SEND	R4	:[]	1
+      019 OP_GETUPVAR	R5	2	0
+      023 OP_SEND	R4	:[]	1
+      027 OP_SEND	R3	:<<	1
+      031 OP_RETURN	R3		
+
+irep 0x61b0f7783540 nregs=7 nlocals=4 pools=0 syms=3 reps=2 iseq=34
+local variable names:
+  R1:block
+  R2:&
+  R3:matrix
+      000 OP_ENTER	1:0:0:0:0:0:0
+      004 OP_GETCONST	R4	:Array
+      007 OP_LOADI	R5	8	
+      010 OP_BLOCK	R6	I(0:0x61b0f7783600)
+      013 OP_SENDB	R4	:new	1
+      017 OP_MOVE	R3	R4		; R3:matrix
+      020 OP_LOADI_0	R4		
+      022 OP_LOADI	R5	63	
+      025 OP_BLOCK	R6	I(1:0x61b0f7783690)
+      028 OP_SENDB	R4	:upto	1
+      032 OP_RETURN	R3			; R3:matrix
+
+irep 0x61b0f7783600 nregs=5 nlocals=2 pools=0 syms=2 reps=0 iseq=16
+local variable names:
+  R1:&
+      000 OP_ENTER	0:0:0:0:0:0:0
+      004 OP_GETCONST	R2	:Array
+      007 OP_LOADI	R3	8	
+      010 OP_SEND	R2	:new	1
+      014 OP_RETURN	R2		
+
+irep 0x61b0f7783690 nregs=10 nlocals=5 pools=0 syms=3 reps=0 iseq=62
+local variable names:
+  R1:i
+  R2:&
+  R3:row
+  R4:column
+      000 OP_ENTER	1:0:0:0:0:0:0
+      004 OP_MOVE	R5	R1		; R1:i
+      007 OP_LOADI	R6	8	
+      010 OP_SEND	R5	:divmod	1
+      014 OP_AREF	R6	R5	0
+      018 OP_MOVE	R3	R6		; R3:row
+      021 OP_AREF	R6	R5	1
+      025 OP_MOVE	R4	R6		; R4:column
+      028 OP_GETUPVAR	R5	1	0
+      032 OP_MOVE	R6	R1		; R1:i
+      035 OP_SEND	R5	:[]	1
+      039 OP_GETUPVAR	R6	3	0
+      043 OP_MOVE	R7	R3		; R3:row
+      046 OP_SEND	R6	:[]	1
+      050 OP_MOVE	R7	R4		; R4:column
+      053 OP_MOVE	R8	R5	
+      056 OP_SEND	R6	:[]=	2
+      060 OP_RETURN	R5		
+
+irep 0x61b0f7783750 nregs=13 nlocals=7 pools=2 syms=10 reps=0 iseq=144
+local variable names:
+  R1:initial_array
+  R2:&
+  R3:matrix_size
+  R4:matrices
+  R5:last_index
+  R6:elements_to_pad
+      000 OP_ENTER	1:0:0:0:0:0:0
+      004 OP_LOADI16	R7	512	
+      008 OP_LOADI	R8	8	
+      011 OP_DIV	R7	R8
+      013 OP_MOVE	R3	R7		; R3:matrix_size
+      016 OP_GETCONST	R7	:Array
+      019 OP_SEND	R7	:new	0
+      023 OP_MOVE	R4	R7		; R4:matrices
+      026 OP_JMP		055
+      029 OP_MOVE	R7	R4		; R4:matrices
+      032 OP_GETCONST	R8	:Matrix
+      035 OP_MOVE	R9	R1		; R1:initial_array
+      038 OP_LOADI_0	R10		
+      040 OP_MOVE	R11	R3		; R3:matrix_size
+      043 OP_SEND	R9	:slice!	2
+      047 OP_SEND	R8	:create_matrix	1
+      051 OP_SEND	R7	:<<	1
+      055 OP_MOVE	R7	R1		; R1:initial_array
+      058 OP_SEND	R7	:length	0
+      062 OP_MOVE	R8	R3		; R3:matrix_size
+      065 OP_GT		R7	R8
+      067 OP_JMPIF	R7	029	
+      071 OP_MOVE	R7	R1		; R1:initial_array
+      074 OP_SEND	R7	:length	0
+      078 OP_MOVE	R5	R7		; R5:last_index
+      081 OP_MOVE	R7	R3		; R3:matrix_size
+      084 OP_MOVE	R8	R1		; R1:initial_array
+      087 OP_SEND	R8	:length	0
+      091 OP_SUB	R7	R8
+      093 OP_MOVE	R6	R7		; R6:elements_to_pad
+      096 OP_MOVE	R7	R1		; R1:initial_array
+      099 OP_STRING	R8	L(0)	;  
+      102 OP_STRING	R9	L(1)	; U
+      105 OP_SEND	R8	:unpack	1
+      109 OP_LOADI_0	R9		
+      111 OP_SEND	R8	:[]	1
+      115 OP_MOVE	R9	R5		; R5:last_index
+      118 OP_MOVE	R10	R6		; R6:elements_to_pad
+      121 OP_SEND	R7	:fill	3
+      125 OP_MOVE	R7	R4		; R4:matrices
+      128 OP_GETCONST	R8	:Matrix
+      131 OP_MOVE	R9	R1		; R1:initial_array
+      134 OP_SEND	R8	:create_matrix	1
+      138 OP_SEND	R7	:<<	1
+      142 OP_RETURN	R4			; R4:matrices
+
+irep 0x61b0f77838e0 nregs=11 nlocals=8 pools=0 syms=7 reps=3 iseq=86
+local variable names:
+  R1:value1
+  R2:value2
+  R3:pol
+  R4:&
+  R5:products
+  R6:to_add
+  R7:result
+      000 OP_ENTER	3:0:0:0:0:0:0
+      004 OP_GETCONST	R8	:Array
+      007 OP_SEND	R8	:new	0
+      011 OP_MOVE	R5	R8		; R5:products
+      014 OP_MOVE	R9	R2		; R2:value2
+      017 OP_SEND	R8	:<<	1
+      021 OP_LOADI_0	R8		
+      023 OP_LOADI_7	R9		
+      025 OP_BLOCK	R10	I(0:0x61b0f77839e0)
+      028 OP_SENDB	R8	:upto	1
+      032 OP_GETCONST	R8	:Array
+      035 OP_SEND	R8	:new	0
+      039 OP_MOVE	R6	R8		; R6:to_add
+      042 OP_LOADI_7	R8		
+      044 OP_LOADI_0	R9		
+      046 OP_BLOCK	R10	I(1:0x61b0f7783ac0)
+      049 OP_SENDB	R8	:downto	1
+      053 OP_MOVE	R8	R6		; R6:to_add
+      056 OP_BLOCK	R9	I(2:0x61b0f7783b70)
+      059 OP_SENDB	R8	:inject	0
+      063 OP_MOVE	R7	R8		; R7:result
+      066 OP_LOADNIL	R9		
+      068 OP_SEND	R8	:!=	1
+      072 OP_JMPNOT	R8	082	
+      076 OP_MOVE	R8	R7		; R7:result
+      079 OP_JMP		084
+      082 OP_LOADI_0	R8		
+      084 OP_RETURN	R8		
+
+irep 0x61b0f77839e0 nregs=6 nlocals=3 pools=0 syms=4 reps=0 iseq=101
+local variable names:
+  R1:&
+  R2:msb
+      000 OP_ENTER	0:0:0:0:0:0:0
+      004 OP_GETUPVAR	R3	2	0
+      008 OP_LOADI_7	R4		
+      010 OP_SEND	R3	:>>	1
+      014 OP_MOVE	R2	R3		; R2:msb
+      017 OP_LOADI_1	R4		
+      019 OP_EQ		R3	R4
+      021 OP_JMPNOT	R3	058	
+      025 OP_GETUPVAR	R3	2	0
+      029 OP_LOADI_1	R4		
+      031 OP_SEND	R3	:<<	1
+      035 OP_SETUPVAR	R3	2	0
+      039 OP_GETUPVAR	R3	2	0
+      043 OP_GETUPVAR	R4	3	0
+      047 OP_SEND	R3	:^	1
+      051 OP_SETUPVAR	R3	2	0
+      055 OP_JMP		072
+      058 OP_GETUPVAR	R3	2	0
+      062 OP_LOADI_1	R4		
+      064 OP_SEND	R3	:<<	1
+      068 OP_SETUPVAR	R3	2	0
+      072 OP_GETUPVAR	R3	2	0
+      076 OP_LOADI	R4	255	
+      079 OP_SEND	R3	:&	1
+      083 OP_SETUPVAR	R3	2	0
+      087 OP_GETUPVAR	R3	5	0
+      091 OP_GETUPVAR	R4	2	0
+      095 OP_SEND	R3	:<<	1
+      099 OP_RETURN	R3		
+
+irep 0x61b0f7783ac0 nregs=7 nlocals=3 pools=0 syms=4 reps=0 iseq=55
+local variable names:
+  R1:i
+  R2:&
+      000 OP_ENTER	1:0:0:0:0:0:0
+      004 OP_GETUPVAR	R3	1	0
+      008 OP_MOVE	R4	R1		; R1:i
+      011 OP_SEND	R3	:>>	1
+      015 OP_LOADI_1	R4		
+      017 OP_SEND	R3	:&	1
+      021 OP_LOADI_1	R4		
+      023 OP_EQ		R3	R4
+      025 OP_JMPNOT	R3	051	
+      029 OP_GETUPVAR	R3	6	0
+      033 OP_GETUPVAR	R4	5	0
+      037 OP_MOVE	R5	R1		; R1:i
+      040 OP_SEND	R4	:[]	1
+      044 OP_SEND	R3	:<<	1
+      048 OP_JMP		053
+      051 OP_LOADNIL	R3		
+      053 OP_RETURN	R3		
+
+irep 0x61b0f7783b70 nregs=7 nlocals=4 pools=0 syms=1 reps=0 iseq=16
+local variable names:
+  R1:s
+  R2:product
+  R3:&
+      000 OP_ENTER	2:0:0:0:0:0:0
+      004 OP_MOVE	R4	R1		; R1:s
+      007 OP_MOVE	R5	R2		; R2:product
+      010 OP_SEND	R4	:^	1
+      014 OP_RETURN	R4		
+
+irep 0x61b0f7783c00 nregs=3 nlocals=1 pools=0 syms=8 reps=6 iseq=61
+      000 OP_LOADNIL	R1		
+      002 OP_SETCV	@@singleton	R1
+      005 OP_GETCONST	R1	:SBox
+      008 OP_SCLASS	R1	
+      010 OP_METHOD	R2	I(0:0x61b0f7783d90)
+      013 OP_DEF	R1	:create
+      016 OP_TCLASS	R1		
+      018 OP_METHOD	R2	I(1:0x61b0f7783e30)
+      021 OP_DEF	R1	:initialize
+      024 OP_TCLASS	R1		
+      026 OP_METHOD	R2	I(2:0x61b0f7784270)
+      029 OP_DEF	R1	:map_e
+      032 OP_TCLASS	R1		
+      034 OP_METHOD	R2	I(3:0x61b0f7784300)
+      037 OP_DEF	R1	:map_inv_e
+      040 OP_TCLASS	R1		
+      042 OP_METHOD	R2	I(4:0x61b0f7784390)
+      045 OP_DEF	R1	:map_r
+      048 OP_TCLASS	R1		
+      050 OP_METHOD	R2	I(5:0x61b0f7784420)
+      053 OP_DEF	R1	:sub_bytes
+      056 OP_LOADSYM	R1	:sub_bytes	
+      059 OP_RETURN	R1		
+
+irep 0x61b0f7783d90 nregs=4 nlocals=2 pools=0 syms=2 reps=0 iseq=25
+local variable names:
+  R1:&
+      000 OP_ENTER	0:0:0:0:0:0:0
+      004 OP_GETCV	R2	@@singleton
+      007 OP_JMPIF	R2	020	
+      011 OP_LOADSELF	R2		
+      013 OP_SEND	R2	:new	0
+      017 OP_SETCV	@@singleton	R2
+      020 OP_GETCV	R2	@@singleton
+      023 OP_RETURN	R2		
+
+irep 0x61b0f7783e30 nregs=18 nlocals=2 pools=0 syms=7 reps=2 iseq=172
+local variable names:
+  R1:&
+      000 OP_ENTER	0:0:0:0:0:0:0
+      004 OP_LOADI_1	R2		
+      006 OP_LOADI	R3	11	
+      009 OP_LOADI	R4	9	
+      012 OP_LOADI	R5	12	
+      015 OP_LOADI	R6	13	
+      018 OP_LOADI_6	R7		
+      020 OP_LOADI	R8	15	
+      023 OP_LOADI_3	R9		
+      025 OP_LOADI	R10	14	
+      028 OP_LOADI	R11	8	
+      031 OP_LOADI_7	R12		
+      033 OP_LOADI_4	R13		
+      035 OP_LOADI	R14	10	
+      038 OP_LOADI_2	R15		
+      040 OP_LOADI_5	R16		
+      042 OP_LOADI_0	R17		
+      044 OP_ARRAY	R2	16	
+      047 OP_SETIV	@eMap	R2
+      050 OP_LOADI	R2	15	
+      053 OP_LOADI_0	R3		
+      055 OP_LOADI	R4	13	
+      058 OP_LOADI_7	R5		
+      060 OP_LOADI	R6	11	
+      063 OP_LOADI	R7	14	
+      066 OP_LOADI_5	R8		
+      068 OP_LOADI	R9	10	
+      071 OP_LOADI	R10	9	
+      074 OP_LOADI_2	R11		
+      076 OP_LOADI	R12	12	
+      079 OP_LOADI_1	R13		
+      081 OP_LOADI_3	R14		
+      083 OP_LOADI_4	R15		
+      085 OP_LOADI	R16	8	
+      088 OP_LOADI_6	R17		
+      090 OP_ARRAY	R2	16	
+      093 OP_SETIV	@invEMap	R2
+      096 OP_LOADI_7	R2		
+      098 OP_LOADI	R3	12	
+      101 OP_LOADI	R4	11	
+      104 OP_LOADI	R5	13	
+      107 OP_LOADI	R6	14	
+      110 OP_LOADI_4	R7		
+      112 OP_LOADI	R8	9	
+      115 OP_LOADI	R9	15	
+      118 OP_LOADI_6	R10		
+      120 OP_LOADI_3	R11		
+      122 OP_LOADI	R12	8	
+      125 OP_LOADI	R13	10	
+      128 OP_LOADI_2	R14		
+      130 OP_LOADI_5	R15		
+      132 OP_LOADI_1	R16		
+      134 OP_LOADI_0	R17		
+      136 OP_ARRAY	R2	16	
+      139 OP_SETIV	@rMap	R2
+      142 OP_GETCONST	R2	:Array
+      145 OP_LOADI	R3	16	
+      148 OP_BLOCK	R4	I(0:0x61b0f7784010)
+      151 OP_SENDB	R2	:new	1
+      155 OP_SETIV	@sbox	R2
+      158 OP_LOADI_0	R2		
+      160 OP_LOADI	R3	15	
+      163 OP_BLOCK	R4	I(1:0x61b0f77840a0)
+      166 OP_SENDB	R2	:upto	1
+      170 OP_RETURN	R2		
+
+irep 0x61b0f7784010 nregs=5 nlocals=2 pools=0 syms=2 reps=0 iseq=16
+local variable names:
+  R1:&
+      000 OP_ENTER	0:0:0:0:0:0:0
+      004 OP_GETCONST	R2	:Array
+      007 OP_LOADI	R3	16	
+      010 OP_SEND	R2	:new	1
+      014 OP_RETURN	R2		
+
+irep 0x61b0f77840a0 nregs=6 nlocals=3 pools=0 syms=1 reps=1 iseq=18
+local variable names:
+  R1:row
+  R2:&
+      000 OP_ENTER	1:0:0:0:0:0:0
+      004 OP_LOADI_0	R3		
+      006 OP_LOADI	R4	15	
+      009 OP_BLOCK	R5	I(0:0x61b0f7784150)
+      012 OP_SENDB	R3	:upto	1
+      016 OP_RETURN	R3		
+
+irep 0x61b0f7784150 nregs=16 nlocals=11 pools=0 syms=9 reps=0 iseq=140
+local variable names:
+  R1:column
+  R2:&
+  R3:a
+  R4:b
+  R5:aE
+  R6:bE
+  R7:aR
+  R8:bR
+  R9:c
+  R10:d
+      000 OP_ENTER	1:0:0:0:0:0:0
+      004 OP_GETUPVAR	R11	1	0
+      008 OP_MOVE	R12	R1		; R1:column
+      011 OP_MOVE	R3	R11		; R3:a
+      014 OP_MOVE	R4	R12		; R4:b
+      017 OP_LOADSELF	R11		
+      019 OP_MOVE	R12	R3		; R3:a
+      022 OP_SEND	R11	:map_e	1
+      026 OP_MOVE	R5	R11		; R5:aE
+      029 OP_LOADSELF	R11		
+      031 OP_MOVE	R12	R4		; R4:b
+      034 OP_SEND	R11	:map_inv_e	1
+      038 OP_MOVE	R6	R11		; R6:bE
+      041 OP_LOADSELF	R11		
+      043 OP_MOVE	R12	R5		; R5:aE
+      046 OP_MOVE	R13	R6		; R6:bE
+      049 OP_SEND	R12	:^	1
+      053 OP_SEND	R11	:map_r	1
+      057 OP_MOVE	R8	R11		; R8:bR
+      060 OP_MOVE	R7	R11		; R7:aR
+      063 OP_LOADSELF	R11		
+      065 OP_MOVE	R12	R5		; R5:aE
+      068 OP_MOVE	R13	R7		; R7:aR
+      071 OP_SEND	R12	:^	1
+      075 OP_SEND	R11	:map_e	1
+      079 OP_MOVE	R9	R11		; R9:c
+      082 OP_LOADSELF	R11		
+      084 OP_MOVE	R12	R6		; R6:bE
+      087 OP_MOVE	R13	R8		; R8:bR
+      090 OP_SEND	R12	:^	1
+      094 OP_SEND	R11	:map_inv_e	1
+      098 OP_MOVE	R10	R11		; R10:d
+      101 OP_MOVE	R11	R9		; R9:c
+      104 OP_LOADI_4	R12		
+      106 OP_SEND	R11	:<<	1
+      110 OP_MOVE	R12	R10		; R10:d
+      113 OP_SEND	R11	:|	1
+      117 OP_GETIV	R12	@sbox
+      120 OP_GETUPVAR	R13	1	0
+      124 OP_SEND	R12	:[]	1
+      128 OP_MOVE	R13	R1		; R1:column
+      131 OP_MOVE	R14	R11	
+      134 OP_SEND	R12	:[]=	2
+      138 OP_RETURN	R11		
+
+irep 0x61b0f7784270 nregs=6 nlocals=3 pools=0 syms=2 reps=0 iseq=16
+local variable names:
+  R1:input
+  R2:&
+      000 OP_ENTER	1:0:0:0:0:0:0
+      004 OP_GETIV	R3	@eMap
+      007 OP_MOVE	R4	R1		; R1:input
+      010 OP_SEND	R3	:[]	1
+      014 OP_RETURN	R3		
+
+irep 0x61b0f7784300 nregs=6 nlocals=3 pools=0 syms=2 reps=0 iseq=16
+local variable names:
+  R1:input
+  R2:&
+      000 OP_ENTER	1:0:0:0:0:0:0
+      004 OP_GETIV	R3	@invEMap
+      007 OP_MOVE	R4	R1		; R1:input
+      010 OP_SEND	R3	:[]	1
+      014 OP_RETURN	R3		
+
+irep 0x61b0f7784390 nregs=6 nlocals=3 pools=0 syms=2 reps=0 iseq=16
+local variable names:
+  R1:input
+  R2:&
+      000 OP_ENTER	1:0:0:0:0:0:0
+      004 OP_GETIV	R3	@rMap
+      007 OP_MOVE	R4	R1		; R1:input
+      010 OP_SEND	R3	:[]	1
+      014 OP_RETURN	R3		
+
+irep 0x61b0f7784420 nregs=8 nlocals=5 pools=0 syms=4 reps=0 iseq=55
+local variable names:
+  R1:input_byte
+  R2:&
+  R3:row
+  R4:column
+      000 OP_ENTER	1:0:0:0:0:0:0
+      004 OP_MOVE	R5	R1		; R1:input_byte
+      007 OP_LOADI	R6	240	
+      010 OP_SEND	R5	:&	1
+      014 OP_LOADI_4	R6		
+      016 OP_SEND	R5	:>>	1
+      020 OP_MOVE	R3	R5		; R3:row
+      023 OP_MOVE	R5	R1		; R1:input_byte
+      026 OP_LOADI	R6	15	
+      029 OP_SEND	R5	:&	1
+      033 OP_MOVE	R4	R5		; R4:column
+      036 OP_GETIV	R5	@sbox
+      039 OP_MOVE	R6	R3		; R3:row
+      042 OP_SEND	R5	:[]	1
+      046 OP_MOVE	R6	R4		; R4:column
+      049 OP_SEND	R5	:[]	1
+      053 OP_RETURN	R5		
+
+irep 0x61b0f77844d0 nregs=4 nlocals=1 pools=0 syms=8 reps=6 iseq=62
+      000 OP_LOADSELF	R1		
+      002 OP_LOADSYM	R2	:state	
+      005 OP_SEND	R1	:attr_reader	1
+      009 OP_TCLASS	R1		
+      011 OP_METHOD	R2	I(0:0x61b0f7784660)
+      014 OP_DEF	R1	:initialize
+      017 OP_TCLASS	R1		
+      019 OP_METHOD	R2	I(1:0x61b0f7784800)
+      022 OP_DEF	R1	:sub_bytes!
+      025 OP_TCLASS	R1		
+      027 OP_METHOD	R2	I(2:0x61b0f7784a10)
+      030 OP_DEF	R1	:shift_columns!
+      033 OP_TCLASS	R1		
+      035 OP_METHOD	R2	I(3:0x61b0f7784d70)
+      038 OP_DEF	R1	:mix_rows!
+      041 OP_TCLASS	R1		
+      043 OP_METHOD	R2	I(4:0x61b0f7784e00)
+      046 OP_DEF	R1	:add_round_key!
+      049 OP_TCLASS	R1		
+      051 OP_METHOD	R2	I(5:0x61b0f7785020)
+      054 OP_DEF	R1	:clone
+      057 OP_LOADSYM	R1	:clone	
+      060 OP_RETURN	R1		
+
+irep 0x61b0f7784660 nregs=18 nlocals=3 pools=0 syms=5 reps=0 iseq=196
+local variable names:
+  R1:block
+  R2:&
+      000 OP_ENTER	1:0:0:0:0:0:0
+      004 OP_MOVE	R3	R1		; R1:block
+      007 OP_SETIV	@state	R3
+      010 OP_LOADI_1	R3		
+      012 OP_LOADI_1	R4		
+      014 OP_LOADI_4	R5		
+      016 OP_LOADI_1	R6		
+      018 OP_LOADI	R7	8	
+      021 OP_LOADI_5	R8		
+      023 OP_LOADI_2	R9		
+      025 OP_LOADI	R10	9	
+      028 OP_ARRAY	R3	8	
+      031 OP_LOADI	R4	9	
+      034 OP_LOADI_1	R5		
+      036 OP_LOADI_1	R6		
+      038 OP_LOADI_4	R7		
+      040 OP_LOADI_1	R8		
+      042 OP_LOADI	R9	8	
+      045 OP_LOADI_5	R10		
+      047 OP_LOADI_2	R11		
+      049 OP_ARRAY	R4	8	
+      052 OP_LOADI_2	R5		
+      054 OP_LOADI	R6	9	
+      057 OP_LOADI_1	R7		
+      059 OP_LOADI_1	R8		
+      061 OP_LOADI_4	R9		
+      063 OP_LOADI_1	R10		
+      065 OP_LOADI	R11	8	
+      068 OP_LOADI_5	R12		
+      070 OP_ARRAY	R5	8	
+      073 OP_LOADI_5	R6		
+      075 OP_LOADI_2	R7		
+      077 OP_LOADI	R8	9	
+      080 OP_LOADI_1	R9		
+      082 OP_LOADI_1	R10		
+      084 OP_LOADI_4	R11		
+      086 OP_LOADI_1	R12		
+      088 OP_LOADI	R13	8	
+      091 OP_ARRAY	R6	8	
+      094 OP_LOADI	R7	8	
+      097 OP_LOADI_5	R8		
+      099 OP_LOADI_2	R9		
+      101 OP_LOADI	R10	9	
+      104 OP_LOADI_1	R11		
+      106 OP_LOADI_1	R12		
+      108 OP_LOADI_4	R13		
+      110 OP_LOADI_1	R14		
+      112 OP_ARRAY	R7	8	
+      115 OP_LOADI_1	R8		
+      117 OP_LOADI	R9	8	
+      120 OP_LOADI_5	R10		
+      122 OP_LOADI_2	R11		
+      124 OP_LOADI	R12	9	
+      127 OP_LOADI_1	R13		
+      129 OP_LOADI_1	R14		
+      131 OP_LOADI_4	R15		
+      133 OP_ARRAY	R8	8	
+      136 OP_LOADI_4	R9		
+      138 OP_LOADI_1	R10		
+      140 OP_LOADI	R11	8	
+      143 OP_LOADI_5	R12		
+      145 OP_LOADI_2	R13		
+      147 OP_LOADI	R14	9	
+      150 OP_LOADI_1	R15		
+      152 OP_LOADI_1	R16		
+      154 OP_ARRAY	R9	8	
+      157 OP_LOADI_1	R10		
+      159 OP_LOADI_4	R11		
+      161 OP_LOADI_1	R12		
+      163 OP_LOADI	R13	8	
+      166 OP_LOADI_5	R14		
+      168 OP_LOADI_2	R15		
+      170 OP_LOADI	R16	9	
+      173 OP_LOADI_1	R17		
+      175 OP_ARRAY	R10	8	
+      178 OP_ARRAY	R3	8	
+      181 OP_SETIV	@mix_rows_constant	R3
+      184 OP_GETCONST	R3	:SBox
+      187 OP_SEND	R3	:create	0
+      191 OP_SETIV	@sub_byte_manager	R3
+      194 OP_RETURN	R3		
+
+irep 0x61b0f7784800 nregs=4 nlocals=2 pools=0 syms=2 reps=1 iseq=16
+local variable names:
+  R1:&
+      000 OP_ENTER	0:0:0:0:0:0:0
+      004 OP_GETIV	R2	@state
+      007 OP_BLOCK	R3	I(0:0x61b0f77848b0)
+      010 OP_SENDB	R2	:each_index	0
+      014 OP_RETURN	R2		
+
+irep 0x61b0f77848b0 nregs=5 nlocals=3 pools=0 syms=2 reps=1 iseq=16
+local variable names:
+  R1:row
+  R2:&
+      000 OP_ENTER	1:0:0:0:0:0:0
+      004 OP_GETIV	R3	@state
+      007 OP_BLOCK	R4	I(0:0x61b0f7784960)
+      010 OP_SENDB	R3	:each_index	0
+      014 OP_RETURN	R3		
+
+irep 0x61b0f7784960 nregs=8 nlocals=3 pools=0 syms=5 reps=0 iseq=52
+local variable names:
+  R1:column
+  R2:&
+      000 OP_ENTER	1:0:0:0:0:0:0
+      004 OP_GETIV	R3	@sub_byte_manager
+      007 OP_GETIV	R4	@state
+      010 OP_GETUPVAR	R5	1	0
+      014 OP_SEND	R4	:[]	1
+      018 OP_MOVE	R5	R1		; R1:column
+      021 OP_SEND	R4	:[]	1
+      025 OP_SEND	R3	:sub_bytes	1
+      029 OP_GETIV	R4	@state
+      032 OP_GETUPVAR	R5	1	0
+      036 OP_SEND	R4	:[]	1
+      040 OP_MOVE	R5	R1		; R1:column
+      043 OP_MOVE	R6	R3	
+      046 OP_SEND	R4	:[]=	2
+      050 OP_RETURN	R3		
+
+irep 0x61b0f7784a10 nregs=5 nlocals=2 pools=0 syms=1 reps=1 iseq=17
+local variable names:
+  R1:&
+      000 OP_ENTER	0:0:0:0:0:0:0
+      004 OP_LOADI_0	R2		
+      006 OP_LOADI_7	R3		
+      008 OP_BLOCK	R4	I(0:0x61b0f7784ac0)
+      011 OP_SENDB	R2	:upto	1
+      015 OP_RETURN	R2		
+
+irep 0x61b0f7784ac0 nregs=8 nlocals=4 pools=0 syms=6 reps=3 iseq=66
+local variable names:
+  R1:column_num
+  R2:&
+  R3:temp_column_block
+      000 OP_ENTER	1:0:0:0:0:0:0
+      004 OP_MOVE	R4	R1		; R1:column_num
+      007 OP_LOADI_0	R5		
+      009 OP_EQ		R4	R5
+      011 OP_JMPNOT	R4	019	
+      015 OP_LOADNIL	R4		
+      017 OP_RETURN	R4		
+      019 OP_GETCONST	R4	:Array
+      022 OP_SEND	R4	:new	0
+      026 OP_MOVE	R3	R4		; R3:temp_column_block
+      029 OP_GETIV	R4	@state
+      032 OP_BLOCK	R5	I(0:0x61b0f7784ba0)
+      035 OP_SENDB	R4	:each	0
+      039 OP_LOADI_0	R4		
+      041 OP_MOVE	R5	R1		; R1:column_num
+      044 OP_SUBI	R5	1
+      047 OP_BLOCK	R6	I(1:0x61b0f7784c40)
+      050 OP_SENDB	R4	:upto	1
+      054 OP_GETIV	R4	@state
+      057 OP_BLOCK	R5	I(2:0x61b0f7784cd0)
+      060 OP_SENDB	R4	:each_index	0
+      064 OP_RETURN	R4		
+
+irep 0x61b0f7784ba0 nregs=7 nlocals=3 pools=0 syms=2 reps=0 iseq=25
+local variable names:
+  R1:row_block
+  R2:&
+      000 OP_ENTER	1:0:0:0:0:0:0
+      004 OP_GETUPVAR	R3	3	0
+      008 OP_MOVE	R4	R1		; R1:row_block
+      011 OP_GETUPVAR	R5	1	0
+      015 OP_SEND	R4	:[]	1
+      019 OP_SEND	R3	:push	1
+      023 OP_RETURN	R3		
+
+irep 0x61b0f7784c40 nregs=5 nlocals=2 pools=0 syms=2 reps=0 iseq=22
+local variable names:
+  R1:&
+      000 OP_ENTER	0:0:0:0:0:0:0
+      004 OP_GETUPVAR	R2	3	0
+      008 OP_GETUPVAR	R3	3	0
+      012 OP_SEND	R3	:pop	0
+      016 OP_SEND	R2	:unshift	1
+      020 OP_RETURN	R2		
+
+irep 0x61b0f7784cd0 nregs=8 nlocals=3 pools=0 syms=3 reps=0 iseq=38
+local variable names:
+  R1:row_index
+  R2:&
+      000 OP_ENTER	1:0:0:0:0:0:0
+      004 OP_GETUPVAR	R3	3	0
+      008 OP_MOVE	R4	R1		; R1:row_index
+      011 OP_SEND	R3	:[]	1
+      015 OP_GETIV	R4	@state
+      018 OP_MOVE	R5	R1		; R1:row_index
+      021 OP_SEND	R4	:[]	1
+      025 OP_GETUPVAR	R5	1	0
+      029 OP_MOVE	R6	R3	
+      032 OP_SEND	R4	:[]=	2
+      036 OP_RETURN	R3		
+
+irep 0x61b0f7784d70 nregs=6 nlocals=2 pools=0 syms=4 reps=0 iseq=22
+local variable names:
+  R1:&
+      000 OP_ENTER	0:0:0:0:0:0:0
+      004 OP_GETCONST	R2	:Matrix
+      007 OP_GETIV	R3	@state
+      010 OP_GETIV	R4	@mix_rows_constant
+      013 OP_SEND	R2	:multiply	2
+      017 OP_SETIV	@state	R2
+      020 OP_RETURN	R2		
+
+irep 0x61b0f7784e00 nregs=5 nlocals=3 pools=0 syms=2 reps=1 iseq=16
+local variable names:
+  R1:round_key
+  R2:&
+      000 OP_ENTER	1:0:0:0:0:0:0
+      004 OP_GETIV	R3	@state
+      007 OP_BLOCK	R4	I(0:0x61b0f7784eb0)
+      010 OP_SENDB	R3	:each_index	0
+      014 OP_RETURN	R3		
+
+irep 0x61b0f7784eb0 nregs=6 nlocals=3 pools=0 syms=3 reps=1 iseq=23
+local variable names:
+  R1:row
+  R2:&
+      000 OP_ENTER	1:0:0:0:0:0:0
+      004 OP_GETIV	R3	@state
+      007 OP_MOVE	R4	R1		; R1:row
+      010 OP_SEND	R3	:[]	1
+      014 OP_BLOCK	R4	I(0:0x61b0f7784f60)
+      017 OP_SENDB	R3	:each_index	0
+      021 OP_RETURN	R3		
+
+irep 0x61b0f7784f60 nregs=8 nlocals=3 pools=0 syms=4 reps=0 iseq=68
+local variable names:
+  R1:column
+  R2:&
+      000 OP_ENTER	1:0:0:0:0:0:0
+      004 OP_GETIV	R3	@state
+      007 OP_GETUPVAR	R4	1	0
+      011 OP_SEND	R3	:[]	1
+      015 OP_MOVE	R4	R1		; R1:column
+      018 OP_SEND	R3	:[]	1
+      022 OP_GETUPVAR	R4	1	1
+      026 OP_GETUPVAR	R5	1	0
+      030 OP_SEND	R4	:[]	1
+      034 OP_MOVE	R5	R1		; R1:column
+      037 OP_SEND	R4	:[]	1
+      041 OP_SEND	R3	:^	1
+      045 OP_GETIV	R4	@state
+      048 OP_GETUPVAR	R5	1	0
+      052 OP_SEND	R4	:[]	1
+      056 OP_MOVE	R5	R1		; R1:column
+      059 OP_MOVE	R6	R3	
+      062 OP_SEND	R4	:[]=	2
+      066 OP_RETURN	R3		
+
+irep 0x61b0f7785020 nregs=6 nlocals=3 pools=0 syms=5 reps=1 iseq=36
+local variable names:
+  R1:&
+  R2:cloned_state
+      000 OP_ENTER	0:0:0:0:0:0:0
+      004 OP_GETCONST	R3	:Array
+      007 OP_SEND	R3	:new	0
+      011 OP_MOVE	R2	R3		; R2:cloned_state
+      014 OP_GETIV	R3	@state
+      017 OP_BLOCK	R4	I(0:0x61b0f77850e0)
+      020 OP_SENDB	R3	:each	0
+      024 OP_GETCONST	R3	:State
+      027 OP_MOVE	R4	R2		; R2:cloned_state
+      030 OP_SEND	R3	:new	1
+      034 OP_RETURN	R3		
+
+irep 0x61b0f77850e0 nregs=6 nlocals=3 pools=0 syms=2 reps=0 iseq=21
+local variable names:
+  R1:row
+  R2:&
+      000 OP_ENTER	1:0:0:0:0:0:0
+      004 OP_GETUPVAR	R3	2	0
+      008 OP_MOVE	R4	R1		; R1:row
+      011 OP_SEND	R4	:clone	0
+      015 OP_SEND	R3	:<<	1
+      019 OP_RETURN	R3		
+
+irep 0x61b0f7785170 nregs=2 nlocals=1 pools=0 syms=3 reps=3 iseq=35
+      000 OP_LOADSELF	R1		
+      002 OP_SCLASS	R1	
+      004 OP_METHOD	R2	I(0:0x61b0f7785290)
+      007 OP_DEF	R1	:pad_byte_array
+      010 OP_LOADSELF	R1		
+      012 OP_SCLASS	R1	
+      014 OP_METHOD	R2	I(1:0x61b0f7785460)
+      017 OP_DEF	R1	:chunk_into_blocks
+      020 OP_LOADSELF	R1		
+      022 OP_SCLASS	R1	
+      024 OP_METHOD	R2	I(2:0x61b0f7785520)
+      027 OP_DEF	R1	:create_comp
+      030 OP_LOADSYM	R1	:create_comp	
+      033 OP_RETURN	R1		
+
+irep 0x61b0f7785290 nregs=14 nlocals=9 pools=0 syms=7 reps=1 iseq=176
+local variable names:
+  R1:bytes_array
+  R2:&
+  R3:count
+  R4:offset
+  R5:padding_length
+  R6:padding
+  R7:blen
+  R8:mlen
+      000 OP_ENTER	1:0:0:0:0:0:0
+      004 OP_MOVE	R9	R1		; R1:bytes_array
+      007 OP_SEND	R9	:length	0
+      011 OP_LOADI16	R10	256	
+      015 OP_LOADI	R11	8	
+      018 OP_DIV	R10	R11
+      020 OP_SEND	R9	:divmod	1
+      024 OP_AREF	R10	R9	0
+      028 OP_MOVE	R3	R10		; R3:count
+      031 OP_AREF	R10	R9	1
+      035 OP_MOVE	R4	R10		; R4:offset
+      038 OP_MOVE	R9	R3		; R3:count
+      041 OP_LOADI_2	R10		
+      043 OP_SEND	R9	:%	1
+      047 OP_LOADI_1	R10		
+      049 OP_EQ		R9	R10
+      051 OP_JMPNOT	R9	086	
+      055 OP_LOADI16	R9	256	
+      059 OP_LOADI	R10	8	
+      062 OP_DIV	R9	R10
+      064 OP_LOADI16	R10	256	
+      068 OP_LOADI	R11	8	
+      071 OP_DIV	R10	R11
+      073 OP_ADD	R9	R10
+      075 OP_MOVE	R10	R4		; R4:offset
+      078 OP_SUB	R9	R10
+      080 OP_MOVE	R5	R9		; R5:padding_length
+      083 OP_JMP		103
+      086 OP_LOADI16	R9	256	
+      090 OP_LOADI	R10	8	
+      093 OP_DIV	R9	R10
+      095 OP_MOVE	R10	R4		; R4:offset
+      098 OP_SUB	R9	R10
+      100 OP_MOVE	R5	R9		; R5:padding_length
+      103 OP_GETCONST	R9	:Array
+      106 OP_MOVE	R10	R5		; R5:padding_length
+      109 OP_BLOCK	R11	I(0:0x61b0f77853f0)
+      112 OP_SENDB	R9	:new	1
+      116 OP_MOVE	R6	R9		; R6:padding
+      119 OP_LOADI	R9	128	
+      122 OP_MOVE	R10	R6		; R6:padding
+      125 OP_LOADI_0	R11		
+      127 OP_MOVE	R12	R9	
+      130 OP_SEND	R10	:[]=	2
+      134 OP_MOVE	R9	R1		; R1:bytes_array
+      137 OP_SEND	R9	:length	0
+      141 OP_LOADI	R10	8	
+      144 OP_MUL	R9	R10
+      146 OP_MOVE	R7	R9		; R7:blen
+      149 OP_LOADSELF	R9		
+      151 OP_MOVE	R10	R7		; R7:blen
+      154 OP_SEND	R9	:create_comp	1
+      158 OP_MOVE	R8	R9		; R8:mlen
+      161 OP_MOVE	R9	R1		; R1:bytes_array
+      164 OP_MOVE	R10	R6		; R6:padding
+      167 OP_ADD	R9	R10
+      169 OP_MOVE	R10	R8		; R8:mlen
+      172 OP_ADD	R9	R10
+      174 OP_RETURN	R9		
+
+irep 0x61b0f77853f0 nregs=3 nlocals=2 pools=0 syms=0 reps=0 iseq=8
+local variable names:
+  R1:&
+      000 OP_ENTER	0:0:0:0:0:0:0
+      004 OP_LOADI_0	R2		
+      006 OP_RETURN	R2		
+
+irep 0x61b0f7785460 nregs=11 nlocals=5 pools=0 syms=6 reps=0 iseq=69
+local variable names:
+  R1:original_array
+  R2:&
+  R3:bytes_array
+  R4:chunks
+      000 OP_ENTER	1:0:0:0:0:0:0
+      004 OP_MOVE	R5	R1		; R1:original_array
+      007 OP_SEND	R5	:clone	0
+      011 OP_MOVE	R3	R5		; R3:bytes_array
+      014 OP_GETCONST	R5	:Array
+      017 OP_SEND	R5	:new	0
+      021 OP_MOVE	R4	R5		; R4:chunks
+      024 OP_JMP		052
+      027 OP_MOVE	R5	R4		; R4:chunks
+      030 OP_MOVE	R6	R3		; R3:bytes_array
+      033 OP_LOADI_0	R7		
+      035 OP_LOADI16	R8	512	
+      039 OP_LOADI	R9	8	
+      042 OP_DIV	R8	R9
+      044 OP_SEND	R6	:slice!	2
+      048 OP_SEND	R5	:<<	1
+      052 OP_MOVE	R5	R3		; R3:bytes_array
+      055 OP_SEND	R5	:length	0
+      059 OP_LOADI_0	R6		
+      061 OP_GT		R5	R6
+      063 OP_JMPIF	R5	027	
+      067 OP_RETURN	R4			; R4:chunks
+
+irep 0x61b0f7785520 nregs=11 nlocals=7 pools=1 syms=6 reps=3 iseq=135
+local variable names:
+  R1:mlen
+  R2:&
+  R3:hex_string
+  R4:hex_string_array
+  R5:i
+  R6:mlen_component
+      000 OP_ENTER	1:0:0:0:0:0:0
+      004 OP_MOVE	R7	R1		; R1:mlen
+      007 OP_LOADI	R8	16	
+      010 OP_SEND	R7	:to_s	1
+      014 OP_MOVE	R3	R7		; R3:hex_string
+      017 OP_SEND	R7	:length	0
+      021 OP_LOADI_2	R8		
+      023 OP_SEND	R7	:%	1
+      027 OP_LOADI_0	R8		
+      029 OP_EQ		R7	R8
+      031 OP_JMPIF	R7	046	
+      035 OP_STRING	R7	L(0)	; 0
+      038 OP_MOVE	R8	R3		; R3:hex_string
+      041 OP_ADD	R7	R8
+      043 OP_MOVE	R3	R7		; R3:hex_string
+      046 OP_GETCONST	R7	:Array
+      049 OP_MOVE	R8	R3		; R3:hex_string
+      052 OP_SEND	R8	:length	0
+      056 OP_LOADI_2	R9		
+      058 OP_DIV	R8	R9
+      060 OP_SEND	R7	:new	1
+      064 OP_MOVE	R4	R7		; R4:hex_string_array
+      067 OP_LOADI_0	R7		
+      069 OP_MOVE	R8	R3		; R3:hex_string
+      072 OP_SEND	R8	:length	0
+      076 OP_LOADI_2	R9		
+      078 OP_DIV	R8	R9
+      080 OP_SUBI	R8	1
+      083 OP_RANGE_INC	R7
+      085 OP_BLOCK	R8	I(0:0x61b0f77855f0)
+      088 OP_SENDB	R7	:each	0
+      092 OP_GETCONST	R7	:Array
+      095 OP_LOADI16	R8	256	
+      099 OP_LOADI	R9	8	
+      102 OP_DIV	R8	R9
+      104 OP_MOVE	R9	R4		; R4:hex_string_array
+      107 OP_SEND	R9	:length	0
+      111 OP_SUB	R8	R9
+      113 OP_BLOCK	R9	I(1:0x61b0f77856a0)
+      116 OP_SENDB	R7	:new	1
+      120 OP_MOVE	R6	R7		; R6:mlen_component
+      123 OP_MOVE	R7	R4		; R4:hex_string_array
+      126 OP_BLOCK	R8	I(2:0x61b0f7785710)
+      129 OP_SENDB	R7	:each	0
+      133 OP_RETURN	R6			; R6:mlen_component
+
+irep 0x61b0f77855f0 nregs=7 nlocals=1 pools=0 syms=2 reps=0 iseq=54
+      000 OP_ENTER	1:0:0:0:0:0:0
+      004 OP_SETUPVAR	R1	5	0
+      008 OP_GETUPVAR	R2	3	0
+      012 OP_GETUPVAR	R3	5	0
+      016 OP_LOADI_2	R4		
+      018 OP_MUL	R3	R4
+      020 OP_GETUPVAR	R4	5	0
+      024 OP_LOADI_2	R5		
+      026 OP_MUL	R4	R5
+      028 OP_ADDI	R4	1
+      031 OP_RANGE_INC	R3
+      033 OP_SEND	R2	:[]	1
+      037 OP_GETUPVAR	R3	4	0
+      041 OP_GETUPVAR	R4	5	0
+      045 OP_MOVE	R5	R2	
+      048 OP_SEND	R3	:[]=	2
+      052 OP_RETURN	R2		
+
+irep 0x61b0f77856a0 nregs=3 nlocals=2 pools=0 syms=0 reps=0 iseq=8
+local variable names:
+  R1:&
+      000 OP_ENTER	0:0:0:0:0:0:0
+      004 OP_LOADI_0	R2		
+      006 OP_RETURN	R2		
+
+irep 0x61b0f7785710 nregs=7 nlocals=3 pools=0 syms=2 reps=0 iseq=24
+local variable names:
+  R1:hex_val
+  R2:&
+      000 OP_ENTER	1:0:0:0:0:0:0
+      004 OP_GETUPVAR	R3	6	0
+      008 OP_MOVE	R4	R1		; R1:hex_val
+      011 OP_LOADI	R5	16	
+      014 OP_SEND	R4	:to_i	1
+      018 OP_SEND	R3	:<<	1
+      022 OP_RETURN	R3		
+
+irep 0x61b0f77857a0 nregs=3 nlocals=1 pools=0 syms=2 reps=2 iseq=21
+      000 OP_TCLASS	R1		
+      002 OP_METHOD	R2	I(0:0x61b0f7785870)
+      005 OP_DEF	R1	:initialize
+      008 OP_TCLASS	R1		
+      010 OP_METHOD	R2	I(1:0x61b0f7785c00)
+      013 OP_DEF	R1	:get_rcont
+      016 OP_LOADSYM	R1	:get_rcont	
+      019 OP_RETURN	R1		
+
+irep 0x61b0f7785870 nregs=6 nlocals=3 pools=0 syms=6 reps=1 iseq=38
+local variable names:
+  R1:&
+  R2:manager
+      000 OP_ENTER	0:0:0:0:0:0:0
+      004 OP_GETCONST	R3	:SBox
+      007 OP_SEND	R3	:create	0
+      011 OP_MOVE	R2	R3		; R2:manager
+      014 OP_GETCONST	R3	:Array
+      017 OP_SEND	R3	:new	0
+      021 OP_SETIV	@rconts	R3
+      024 OP_LOADI_1	R3		
+      026 OP_LOADI	R4	10	
+      029 OP_BLOCK	R5	I(0:0x61b0f7785950)
+      032 OP_SENDB	R3	:upto	1
+      036 OP_RETURN	R3		
+
+irep 0x61b0f7785950 nregs=9 nlocals=4 pools=0 syms=6 reps=2 iseq=51
+local variable names:
+  R1:round
+  R2:&
+  R3:states
+      000 OP_ENTER	1:0:0:0:0:0:0
+      004 OP_GETCONST	R4	:Array
+      007 OP_LOADI	R5	8	
+      010 OP_BLOCK	R6	I(0:0x61b0f7785a20)
+      013 OP_SENDB	R4	:new	1
+      017 OP_MOVE	R3	R4		; R3:states
+      020 OP_LOADI_0	R5		
+      022 OP_SEND	R4	:[]	1
+      026 OP_BLOCK	R5	I(1:0x61b0f7785b40)
+      029 OP_SENDB	R4	:each_index	0
+      033 OP_MOVE	R4	R3		; R3:states
+      036 OP_GETIV	R5	@rconts
+      039 OP_MOVE	R6	R1		; R1:round
+      042 OP_MOVE	R7	R4	
+      045 OP_SEND	R5	:[]=	2
+      049 OP_RETURN	R4		
+
+irep 0x61b0f7785a20 nregs=5 nlocals=2 pools=0 syms=2 reps=1 iseq=19
+local variable names:
+  R1:&
+      000 OP_ENTER	0:0:0:0:0:0:0
+      004 OP_GETCONST	R2	:Array
+      007 OP_LOADI	R3	8	
+      010 OP_BLOCK	R4	I(0:0x61b0f7785ad0)
+      013 OP_SENDB	R2	:new	1
+      017 OP_RETURN	R2		
+
+irep 0x61b0f7785ad0 nregs=3 nlocals=2 pools=0 syms=0 reps=0 iseq=8
+local variable names:
+  R1:&
+      000 OP_ENTER	0:0:0:0:0:0:0
+      004 OP_LOADI_0	R2		
+      006 OP_RETURN	R2		
+
+irep 0x61b0f7785b40 nregs=9 nlocals=4 pools=0 syms=3 reps=0 iseq=57
+local variable names:
+  R1:column
+  R2:&
+  R3:input_byte
+      000 OP_ENTER	1:0:0:0:0:0:0
+      004 OP_LOADI	R4	8	
+      007 OP_GETUPVAR	R5	1	0
+      011 OP_SUBI	R5	1
+      014 OP_MUL	R4	R5
+      016 OP_MOVE	R5	R1		; R1:column
+      019 OP_ADD	R4	R5
+      021 OP_MOVE	R3	R4		; R3:input_byte
+      024 OP_GETUPVAR	R4	2	1
+      028 OP_MOVE	R5	R3		; R3:input_byte
+      031 OP_SEND	R4	:sub_bytes	1
+      035 OP_GETUPVAR	R5	3	0
+      039 OP_LOADI_0	R6		
+      041 OP_SEND	R5	:[]	1
+      045 OP_MOVE	R6	R1		; R1:column
+      048 OP_MOVE	R7	R4	
+      051 OP_SEND	R5	:[]=	2
+      055 OP_RETURN	R4		
+
+irep 0x61b0f7785c00 nregs=6 nlocals=3 pools=0 syms=2 reps=0 iseq=16
+local variable names:
+  R1:n
+  R2:&
+      000 OP_ENTER	1:0:0:0:0:0:0
+      004 OP_GETIV	R3	@rconts
+      007 OP_MOVE	R4	R1		; R1:n
+      010 OP_SEND	R3	:[]	1
+      014 OP_RETURN	R3		
+
+irep 0x61b0f7785c90 nregs=4 nlocals=1 pools=0 syms=4 reps=2 iseq=30
+      000 OP_LOADSELF	R1		
+      002 OP_LOADSYM	R2	:state	
+      005 OP_SEND	R1	:attr_reader	1
+      009 OP_TCLASS	R1		
+      011 OP_METHOD	R2	I(0:0x61b0f7785d70)
+      014 OP_DEF	R1	:initialize
+      017 OP_TCLASS	R1		
+      019 OP_METHOD	R2	I(1:0x61b0f7785e20)
+      022 OP_DEF	R1	:execute
+      025 OP_LOADSYM	R1	:execute	
+      028 OP_RETURN	R1		
+
+irep 0x61b0f7785d70 nregs=6 nlocals=4 pools=0 syms=3 reps=0 iseq=22
+local variable names:
+  R1:input_state
+  R2:round_key
+  R3:&
+      000 OP_ENTER	2:0:0:0:0:0:0
+      004 OP_MOVE	R4	R1		; R1:input_state
+      007 OP_SEND	R4	:clone	0
+      011 OP_SETIV	@state	R4
+      014 OP_MOVE	R4	R2		; R2:round_key
+      017 OP_SETIV	@round_key	R4
+      020 OP_RETURN	R4		
+
+irep 0x61b0f7785e20 nregs=5 nlocals=2 pools=0 syms=6 reps=0 iseq=37
+local variable names:
+  R1:&
+      000 OP_ENTER	0:0:0:0:0:0:0
+      004 OP_GETIV	R2	@state
+      007 OP_SEND	R2	:sub_bytes!	0
+      011 OP_GETIV	R2	@state
+      014 OP_SEND	R2	:shift_columns!	0
+      018 OP_GETIV	R2	@state
+      021 OP_SEND	R2	:mix_rows!	0
+      025 OP_GETIV	R2	@state
+      028 OP_GETIV	R3	@round_key
+      031 OP_SEND	R2	:add_round_key!	1
+      035 OP_RETURN	R2		
+
+irep 0x61b0f7785ec0 nregs=3 nlocals=1 pools=0 syms=2 reps=2 iseq=21
+      000 OP_TCLASS	R1		
+      002 OP_METHOD	R2	I(0:0x61b0f7785f90)
+      005 OP_DEF	R1	:initialize
+      008 OP_TCLASS	R1		
+      010 OP_METHOD	R2	I(1:0x61b0f7786170)
+      013 OP_DEF	R1	:get_round_key
+      016 OP_LOADSYM	R1	:get_round_key	
+      019 OP_RETURN	R1		
+
+irep 0x61b0f7785f90 nregs=8 nlocals=5 pools=0 syms=8 reps=1 iseq=62
+local variable names:
+  R1:key_state
+  R2:&
+  R3:manager
+  R4:input_state
+      000 OP_ENTER	1:0:0:0:0:0:0
+      004 OP_GETCONST	R5	:Array
+      007 OP_SEND	R5	:new	0
+      011 OP_SETIV	@round_keys	R5
+      014 OP_GETCONST	R5	:Consts
+      017 OP_SEND	R5	:new	0
+      021 OP_MOVE	R3	R5		; R3:manager
+      024 OP_MOVE	R5	R1		; R1:key_state
+      027 OP_MOVE	R4	R5		; R4:input_state
+      030 OP_GETIV	R5	@round_keys
+      033 OP_MOVE	R6	R4		; R4:input_state
+      036 OP_SEND	R6	:state	0
+      040 OP_SEND	R6	:clone	0
+      044 OP_SEND	R5	:<<	1
+      048 OP_LOADI_1	R5		
+      050 OP_LOADI	R6	10	
+      053 OP_BLOCK	R7	I(0:0x61b0f77860a0)
+      056 OP_SENDB	R5	:upto	1
+      060 OP_RETURN	R5		
+
+irep 0x61b0f77860a0 nregs=9 nlocals=5 pools=0 syms=7 reps=0 iseq=70
+local variable names:
+  R1:i
+  R2:&
+  R3:rcon
+  R4:r
+      000 OP_ENTER	1:0:0:0:0:0:0
+      004 OP_GETUPVAR	R5	3	0
+      008 OP_MOVE	R6	R1		; R1:i
+      011 OP_SEND	R5	:get_rcont	1
+      015 OP_MOVE	R3	R5		; R3:rcon
+      018 OP_GETCONST	R5	:Round
+      021 OP_GETUPVAR	R6	4	0
+      025 OP_MOVE	R7	R3		; R3:rcon
+      028 OP_SEND	R5	:new	2
+      032 OP_MOVE	R4	R5		; R4:r
+      035 OP_SEND	R5	:execute	0
+      039 OP_MOVE	R5	R4		; R4:r
+      042 OP_SEND	R5	:state	0
+      046 OP_SETUPVAR	R5	4	0
+      050 OP_GETIV	R5	@round_keys
+      053 OP_MOVE	R6	R4		; R4:r
+      056 OP_SEND	R6	:state	0
+      060 OP_SEND	R6	:state	0
+      064 OP_SEND	R5	:<<	1
+      068 OP_RETURN	R5		
+
+irep 0x61b0f7786170 nregs=6 nlocals=3 pools=0 syms=2 reps=0 iseq=16
+local variable names:
+  R1:round_key_num
+  R2:&
+      000 OP_ENTER	1:0:0:0:0:0:0
+      004 OP_GETIV	R3	@round_keys
+      007 OP_MOVE	R4	R1		; R1:round_key_num
+      010 OP_SEND	R3	:[]	1
+      014 OP_RETURN	R3		
+
+irep 0x61b0f7786200 nregs=3 nlocals=1 pools=0 syms=4 reps=3 iseq=35
+      000 OP_TCLASS	R1		
+      002 OP_METHOD	R2	I(0:0x61b0f7786300)
+      005 OP_DEF	R1	:initialize
+      008 OP_TCLASS	R1		
+      010 OP_METHOD	R2	I(1:0x61b0f77863b0)
+      013 OP_DEF	R1	:encrypt_state
+      016 OP_LOADSELF	R1		
+      018 OP_SEND	R1	:private	0
+      022 OP_TCLASS	R1		
+      024 OP_METHOD	R2	I(2:0x61b0f7786560)
+      027 OP_DEF	R1	:create_key_state
+      030 OP_LOADSYM	R1	:create_key_state	
+      033 OP_RETURN	R1		
+
+irep 0x61b0f7786300 nregs=4 nlocals=2 pools=0 syms=3 reps=0 iseq=16
+local variable names:
+  R1:&
+      000 OP_ENTER	0:0:0:0:0:0:0
+      004 OP_GETCONST	R2	:Consts
+      007 OP_SEND	R2	:new	0
+      011 OP_SETIV	@manager	R2
+      014 OP_RETURN	R2		
+
+irep 0x61b0f77863b0 nregs=11 nlocals=7 pools=0 syms=10 reps=1 iseq=88
+local variable names:
+  R1:block
+  R2:key
+  R3:&
+  R4:encryption_state
+  R5:key_state
+  R6:key_generator
+      000 OP_ENTER	2:0:0:0:0:0:0
+      004 OP_GETCONST	R7	:State
+      007 OP_GETCONST	R8	:Matrix
+      010 OP_MOVE	R9	R1		; R1:block
+      013 OP_SEND	R8	:create_matrix	1
+      017 OP_SEND	R7	:new	1
+      021 OP_MOVE	R4	R7		; R4:encryption_state
+      024 OP_LOADSELF	R7		
+      026 OP_MOVE	R8	R2		; R2:key
+      029 OP_SEND	R7	:create_key_state	1
+      033 OP_MOVE	R5	R7		; R5:key_state
+      036 OP_GETCONST	R7	:Keys
+      039 OP_MOVE	R8	R5		; R5:key_state
+      042 OP_SEND	R7	:new	1
+      046 OP_MOVE	R6	R7		; R6:key_generator
+      049 OP_MOVE	R7	R4		; R4:encryption_state
+      052 OP_MOVE	R8	R5		; R5:key_state
+      055 OP_SEND	R8	:state	0
+      059 OP_SEND	R7	:add_round_key!	1
+      063 OP_LOADI_1	R7		
+      065 OP_LOADI	R8	10	
+      068 OP_BLOCK	R9	I(0:0x61b0f77864b0)
+      071 OP_SENDB	R7	:upto	1
+      075 OP_MOVE	R7	R4		; R4:encryption_state
+      078 OP_SEND	R7	:state	0
+      082 OP_SEND	R7	:flatten	0
+      086 OP_RETURN	R7		
+
+irep 0x61b0f77864b0 nregs=9 nlocals=5 pools=0 syms=5 reps=0 iseq=52
+local variable names:
+  R1:i
+  R2:&
+  R3:round_key
+  R4:round
+      000 OP_ENTER	1:0:0:0:0:0:0
+      004 OP_GETUPVAR	R5	6	0
+      008 OP_MOVE	R6	R1		; R1:i
+      011 OP_SEND	R5	:get_round_key	1
+      015 OP_MOVE	R3	R5		; R3:round_key
+      018 OP_GETCONST	R5	:Round
+      021 OP_GETUPVAR	R6	4	0
+      025 OP_MOVE	R7	R3		; R3:round_key
+      028 OP_SEND	R5	:new	2
+      032 OP_MOVE	R4	R5		; R4:round
+      035 OP_SEND	R5	:execute	0
+      039 OP_MOVE	R5	R4		; R4:round
+      042 OP_SEND	R5	:state	0
+      046 OP_SETUPVAR	R5	4	0
+      050 OP_RETURN	R5		
+
+irep 0x61b0f7786560 nregs=7 nlocals=3 pools=0 syms=4 reps=0 iseq=23
+local variable names:
+  R1:key
+  R2:&
+      000 OP_ENTER	1:0:0:0:0:0:0
+      004 OP_GETCONST	R3	:State
+      007 OP_GETCONST	R4	:Matrix
+      010 OP_MOVE	R5	R1		; R1:key
+      013 OP_SEND	R4	:create_matrix	1
+      017 OP_SEND	R3	:new	1
+      021 OP_RETURN	R3		
+
+irep 0x61b0f77865f0 nregs=3 nlocals=1 pools=0 syms=1 reps=1 iseq=13
+      000 OP_TCLASS	R1		
+      002 OP_METHOD	R2	I(0:0x61b0f77866a0)
+      005 OP_DEF	R1	:hash
+      008 OP_LOADSYM	R1	:hash	
+      011 OP_RETURN	R1		
+
+irep 0x61b0f77866a0 nregs=13 nlocals=9 pools=1 syms=7 reps=2 iseq=83
+local variable names:
+  R1:input_byte_array
+  R2:&
+  R3:padded_byte_array
+  R4:input_blocks
+  R5:encryptor
+  R6:encrypted_state
+  R7:iteration
+  R8:key
+      000 OP_ENTER	1:0:0:0:0:0:0
+      004 OP_GETCONST	R9	:Util
+      007 OP_MOVE	R10	R1		; R1:input_byte_array
+      010 OP_SEND	R9	:pad_byte_array	1
+      014 OP_MOVE	R3	R9		; R3:padded_byte_array
+      017 OP_GETCONST	R9	:Util
+      020 OP_MOVE	R10	R3		; R3:padded_byte_array
+      023 OP_SEND	R9	:chunk_into_blocks	1
+      027 OP_MOVE	R4	R9		; R4:input_blocks
+      030 OP_GETCONST	R9	:Encryptor
+      033 OP_SEND	R9	:new	0
+      037 OP_MOVE	R5	R9		; R5:encryptor
+      040 OP_LOADNIL	R6			; R6:encrypted_state
+      042 OP_LOADI_0	R7			; R7:iteration
+      044 OP_GETCONST	R9	:Array
+      047 OP_LOADI16	R10	512	
+      051 OP_LOADI	R11	8	
+      054 OP_DIV	R10	R11
+      056 OP_BLOCK	R11	I(0:0x61b0f77867c0)
+      059 OP_SENDB	R9	:new	1
+      063 OP_MOVE	R8	R9		; R8:key
+      066 OP_MOVE	R9	R4		; R4:input_blocks
+      069 OP_BLOCK	R10	I(1:0x61b0f7786830)
+      072 OP_SENDB	R9	:each	0
+      076 OP_RETURN	R6			; R6:encrypted_state
+      078 OP_STRING	R9	L(0)	; 
+    encrypted_state.inject("") do |hash_val, item|
+      hex_val = (item & 0xFF).to_s(16).upcase
+      hex_val = "0" + hex_val unless hex_val.length == 2 # ensure leading zero not stripped out
+      hash_val = hash_val + hex_val
+      hash_val
+    end
+    
+      081 OP_RETURN	R9		
+
+irep 0x61b0f77867c0 nregs=3 nlocals=2 pools=0 syms=0 reps=0 iseq=8
+local variable names:
+  R1:&
+      000 OP_ENTER	0:0:0:0:0:0:0
+      004 OP_LOADI_0	R2		
+      006 OP_RETURN	R2		
+
+irep 0x61b0f7786830 nregs=8 nlocals=4 pools=0 syms=2 reps=2 iseq=62
+local variable names:
+  R1:block
+  R2:&
+  R3:previous_key
+      000 OP_ENTER	1:0:0:0:0:0:0
+      004 OP_GETUPVAR	R4	8	0
+      008 OP_MOVE	R3	R4		; R3:previous_key
+      011 OP_GETUPVAR	R4	5	0
+      015 OP_MOVE	R5	R1		; R1:block
+      018 OP_GETUPVAR	R6	8	0
+      022 OP_SEND	R4	:encrypt_state	2
+      026 OP_SETUPVAR	R4	6	0
+      030 OP_GETUPVAR	R4	6	0
+      034 OP_SETUPVAR	R4	8	0
+      038 OP_GETUPVAR	R4	8	0
+      042 OP_BLOCK	R5	I(0:0x61b0f7786910)
+      045 OP_SENDB	R4	:each_index	0
+      049 OP_GETUPVAR	R4	8	0
+      053 OP_BLOCK	R5	I(1:0x61b0f77869c0)
+      056 OP_SENDB	R4	:each_index	0
+      060 OP_RETURN	R4		
+
+irep 0x61b0f7786910 nregs=10 nlocals=3 pools=0 syms=3 reps=0 iseq=45
+local variable names:
+  R1:i
+  R2:&
+      000 OP_ENTER	1:0:0:0:0:0:0
+      004 OP_GETUPVAR	R4	8	1
+      008 OP_MOVE	R5	R1		; R1:i
+      011 OP_MOVE	R6	R4	
+      014 OP_MOVE	R7	R5	
+      017 OP_SEND	R6	:[]	1
+      021 OP_GETUPVAR	R7	3	0
+      025 OP_MOVE	R8	R1		; R1:i
+      028 OP_SEND	R7	:[]	1
+      032 OP_SEND	R6	:^	1
+      036 OP_MOVE	R3	R6	
+      039 OP_SEND	R4	:[]=	2
+      043 OP_RETURN	R3		
+
+irep 0x61b0f77869c0 nregs=10 nlocals=3 pools=0 syms=3 reps=0 iseq=45
+local variable names:
+  R1:i
+  R2:&
+      000 OP_ENTER	1:0:0:0:0:0:0
+      004 OP_GETUPVAR	R4	8	1
+      008 OP_MOVE	R5	R1		; R1:i
+      011 OP_MOVE	R6	R4	
+      014 OP_MOVE	R7	R5	
+      017 OP_SEND	R6	:[]	1
+      021 OP_GETUPVAR	R7	1	0
+      025 OP_MOVE	R8	R1		; R1:i
+      028 OP_SEND	R7	:[]	1
+      032 OP_SEND	R6	:^	1
+      036 OP_MOVE	R3	R6	
+      039 OP_SEND	R4	:[]=	2
+      043 OP_RETURN	R3		
+
+irep 0x61b0f7786a70 nregs=6 nlocals=3 pools=0 syms=0 reps=0 iseq=189
+local variable names:
+  R1:v
+  R2:&
+      000 OP_ENTER	1:0:0:0:0:0:0
+      004 OP_MOVE	R3	R1		; R1:v
+      007 OP_LOADI	R4	48	
+      010 OP_LT		R3	R4
+      012 OP_JMPIF	R3	024	
+      016 OP_MOVE	R3	R1		; R1:v
+      019 OP_LOADI	R4	122	
+      022 OP_GT		R3	R4
+      024 OP_JMPIF	R3	048	
+      028 OP_MOVE	R3	R1		; R1:v
+      031 OP_LOADI	R4	57	
+      034 OP_GT		R3	R4
+      036 OP_JMPNOT	R3	048	
+      040 OP_MOVE	R3	R1		; R1:v
+      043 OP_LOADI	R4	65	
+      046 OP_LT		R3	R4
+      048 OP_JMPIF	R3	072	
+      052 OP_MOVE	R3	R1		; R1:v
+      055 OP_LOADI	R4	90	
+      058 OP_GT		R3	R4
+      060 OP_JMPNOT	R3	072	
+      064 OP_MOVE	R3	R1		; R1:v
+      067 OP_LOADI	R4	97	
+      070 OP_LT		R3	R4
+      072 OP_JMPNOT	R3	080	
+      076 OP_LOADI__1	R3		
+      078 OP_RETURN	R3		
+      080 OP_MOVE	R3	R1		; R1:v
+      083 OP_LOADI	R4	48	
+      086 OP_GE		R3	R4
+      088 OP_JMPNOT	R3	100	
+      092 OP_MOVE	R3	R1		; R1:v
+      095 OP_LOADI	R4	57	
+      098 OP_LE		R3	R4
+      100 OP_JMPNOT	R3	112	
+      104 OP_MOVE	R3	R1		; R1:v
+      107 OP_SUBI	R3	48
+      110 OP_RETURN	R3		
+      112 OP_MOVE	R3	R1		; R1:v
+      115 OP_LOADI	R4	65	
+      118 OP_GE		R3	R4
+      120 OP_JMPNOT	R3	132	
+      124 OP_MOVE	R3	R1		; R1:v
+      127 OP_LOADI	R4	90	
+      130 OP_LE		R3	R4
+      132 OP_JMPNOT	R3	147	
+      136 OP_MOVE	R3	R1		; R1:v
+      139 OP_SUBI	R3	65
+      142 OP_ADDI	R3	10
+      145 OP_RETURN	R3		
+      147 OP_MOVE	R3	R1		; R1:v
+      150 OP_LOADI	R4	97	
+      153 OP_GE		R3	R4
+      155 OP_JMPNOT	R3	167	
+      159 OP_MOVE	R3	R1		; R1:v
+      162 OP_LOADI	R4	122	
+      165 OP_LE		R3	R4
+      167 OP_JMPNOT	R3	185	
+      171 OP_MOVE	R3	R1		; R1:v
+      174 OP_SUBI	R3	97
+      177 OP_ADDI	R3	36
+      180 OP_RETURN	R3		
+      182 OP_JMP		187
+      185 OP_LOADNIL	R3		
+      187 OP_RETURN	R3		
+
+irep 0x61b0f7786b90 nregs=85 nlocals=14 pools=3 syms=15 reps=3 iseq=2089
+local variable names:
+  R1:plain_text
+  R2:&
+  R3:content
+  R4:i
+  R5:v
+  R6:step
+  R7:lst
+  R8:c
+  R9:j
+  R10:wanted
+  R11:cipher
+  R12:cc
+  R13:output
+      000 OP_ENTER	1:0:0:0:0:0:0
+      004 OP_MOVE	R14	R1		; R1:plain_text
+      007 OP_STRING	R15	L(0)	; flag{
+      010 OP_SEND	R14	:start_with?	1
+      014 OP_SEND	R14	:!	0
+      018 OP_JMPIF	R14	036	
+      022 OP_MOVE	R14	R1		; R1:plain_text
+      025 OP_STRING	R15	L(1)	; }
+      028 OP_SEND	R14	:end_with?	1
+      032 OP_SEND	R14	:!	0
+      036 OP_JMPIF	R14	054	
+      040 OP_MOVE	R14	R1		; R1:plain_text
+      043 OP_SEND	R14	:length	0
+      047 OP_LOADI	R15	38	
+      050 OP_SEND	R14	:!=	1
+      054 OP_JMPNOT	R14	062	
+      058 OP_LOADF	R14		
+      060 OP_RETURN	R14		
+      062 OP_MOVE	R14	R1		; R1:plain_text
+      065 OP_LOADI_5	R15		
+      067 OP_LOADI	R16	36	
+      070 OP_RANGE_INC	R15
+      072 OP_SEND	R14	:[]	1
+      076 OP_MOVE	R3	R14		; R3:content
+      079 OP_LOADI_0	R14		
+      081 OP_MOVE	R15	R3		; R3:content
+      084 OP_SEND	R15	:length	0
+      088 OP_SUBI	R15	1
+      091 OP_RANGE_INC	R14
+      093 OP_BLOCK	R15	I(0:0x61b0f7787530)
+      096 OP_SENDB	R14	:each	0
+      100 OP_LOADI_1	R6			; R6:step
+      102 OP_LOADI_0	R4			; R4:i
+      104 OP_LOADI_0	R7			; R7:lst
+      106 OP_MOVE	R14	R4		; R4:i
+      109 OP_MOVE	R15	R6		; R6:step
+      112 OP_ADD	R14	R15
+      114 OP_MOVE	R4	R14		; R4:i
+      117 OP_JMP		214
+      120 OP_MOVE	R14	R3		; R3:content
+      123 OP_MOVE	R15	R7		; R7:lst
+      126 OP_SEND	R14	:[]	1
+      130 OP_SEND	R14	:ord	0
+      134 OP_MOVE	R8	R14		; R8:c
+      137 OP_MOVE	R14	R7		; R7:lst
+      140 OP_ADDI	R14	1
+      143 OP_MOVE	R15	R4		; R4:i
+      146 OP_SUBI	R15	1
+      149 OP_RANGE_INC	R14
+      151 OP_BLOCK	R15	I(1:0x61b0f7787600)
+      154 OP_SENDB	R14	:each	0
+      158 OP_MOVE	R14	R8		; R8:c
+      161 OP_MOVE	R15	R7		; R7:lst
+      164 OP_ADDI	R15	1
+      167 OP_SEND	R14	:^	1
+      171 OP_SEND	R14	:chr	0
+      175 OP_MOVE	R15	R3		; R3:content
+      178 OP_MOVE	R16	R7		; R7:lst
+      181 OP_MOVE	R17	R14	
+      184 OP_SEND	R15	:[]=	2
+      188 OP_MOVE	R14	R4		; R4:i
+      191 OP_MOVE	R7	R14		; R7:lst
+      194 OP_MOVE	R14	R6		; R6:step
+      197 OP_ADDI	R14	1
+      200 OP_MOVE	R6	R14		; R6:step
+      203 OP_MOVE	R14	R4		; R4:i
+      206 OP_MOVE	R15	R6		; R6:step
+      209 OP_ADD	R14	R15
+      211 OP_MOVE	R4	R14		; R4:i
+      214 OP_MOVE	R14	R4		; R4:i
+      217 OP_MOVE	R15	R3		; R3:content
+      220 OP_SEND	R15	:length	0
+      224 OP_LT		R14	R15
+      226 OP_JMPIF	R14	120	
+      230 OP_LOADI_0	R14		
+      232 OP_MOVE	R15	R3		; R3:content
+      235 OP_SEND	R15	:length	0
+      239 OP_SUBI	R15	1
+      242 OP_RANGE_INC	R14
+      244 OP_BLOCK	R15	I(2:0x61b0f77876c0)
+      247 OP_SENDB	R14	:each	0
+      251 OP_LOADI_0	R4			; R4:i
+      253 OP_LOADI	R14	60	
+      256 OP_LOADI	R15	246	
+      259 OP_LOADI	R16	83	
+      262 OP_LOADI	R17	19	
+      265 OP_LOADI	R18	107	
+      268 OP_LOADI	R19	171	
+      271 OP_LOADI	R20	34	
+      274 OP_LOADI	R21	81	
+      277 OP_LOADI	R22	83	
+      280 OP_LOADI	R23	143	
+      283 OP_LOADI_4	R24		
+      285 OP_LOADI	R25	165	
+      288 OP_LOADI	R26	47	
+      291 OP_LOADI	R27	11	
+      294 OP_LOADI	R28	219	
+      297 OP_LOADI	R29	98	
+      300 OP_LOADI	R30	84	
+      303 OP_LOADI	R31	173	
+      306 OP_LOADI	R32	206	
+      309 OP_LOADI	R33	225	
+      312 OP_LOADI	R34	123	
+      315 OP_LOADI	R35	106	
+      318 OP_LOADI	R36	169	
+      321 OP_LOADI	R37	228	
+      324 OP_LOADI	R38	80	
+      327 OP_LOADI	R39	191	
+      330 OP_LOADI	R40	153	
+      333 OP_LOADI	R41	108	
+      336 OP_LOADI	R42	137	
+      339 OP_LOADI	R43	38	
+      342 OP_LOADI	R44	13	
+      345 OP_LOADI	R45	55	
+      348 OP_LOADI	R46	84	
+      351 OP_LOADI_2	R47		
+      353 OP_LOADI	R48	197	
+      356 OP_LOADI	R49	214	
+      359 OP_LOADI	R50	146	
+      362 OP_LOADI	R51	174	
+      365 OP_LOADI	R52	78	
+      368 OP_LOADI	R53	132	
+      371 OP_LOADI	R54	144	
+      374 OP_LOADI	R55	116	
+      377 OP_LOADI	R56	34	
+      380 OP_LOADI	R57	164	
+      383 OP_LOADI	R58	181	
+      386 OP_LOADI	R59	149	
+      389 OP_LOADI	R60	133	
+      392 OP_LOADI	R61	250	
+      395 OP_LOADI	R62	108	
+      398 OP_LOADI	R63	217	
+      401 OP_LOADI	R64	195	
+      404 OP_LOADI	R65	29	
+      407 OP_LOADI	R66	93	
+      410 OP_LOADI	R67	57	
+      413 OP_LOADI	R68	252	
+      416 OP_LOADI	R69	39	
+      419 OP_LOADI	R70	143	
+      422 OP_LOADI	R71	58	
+      425 OP_LOADI	R72	82	
+      428 OP_LOADI	R73	75	
+      431 OP_LOADI	R74	105	
+      434 OP_LOADI	R75	43	
+      437 OP_LOADI	R76	251	
+      440 OP_LOADI	R77	178	
+      443 OP_ARRAY	R14	64	
+      446 OP_LOADI	R15	217	
+      449 OP_LOADI	R16	232	
+      452 OP_LOADI	R17	9	
+      455 OP_LOADI	R18	47	
+      458 OP_LOADI	R19	133	
+      461 OP_LOADI	R20	26	
+      464 OP_LOADI	R21	172	
+      467 OP_LOADI	R22	21	
+      470 OP_LOADI	R23	26	
+      473 OP_LOADI	R24	139	
+      476 OP_LOADI	R25	219	
+      479 OP_LOADI	R26	17	
+      482 OP_LOADI	R27	81	
+      485 OP_LOADI	R28	240	
+      488 OP_LOADI	R29	13	
+      491 OP_LOADI	R30	108	
+      494 OP_LOADI	R31	226	
+      497 OP_LOADI	R32	46	
+      500 OP_LOADI	R33	206	
+      503 OP_LOADI	R34	17	
+      506 OP_LOADI_0	R35		
+      508 OP_LOADI	R36	23	
+      511 OP_LOADI	R37	75	
+      514 OP_LOADI	R38	185	
+      517 OP_LOADI	R39	240	
+      520 OP_LOADI	R40	109	
+      523 OP_LOADI	R41	117	
+      526 OP_LOADI	R42	38	
+      529 OP_LOADI	R43	141	
+      532 OP_LOADI	R44	129	
+      535 OP_LOADI	R45	114	
+      538 OP_LOADI	R46	95	
+      541 OP_LOADI	R47	164	
+      544 OP_LOADI_3	R48		
+      546 OP_LOADI	R49	168	
+      549 OP_LOADI	R50	110	
+      552 OP_LOADI	R51	64	
+      555 OP_LOADI	R52	240	
+      558 OP_LOADI	R53	224	
+      561 OP_LOADI	R54	193	
+      564 OP_LOADI	R55	34	
+      567 OP_LOADI	R56	38	
+      570 OP_LOADI	R57	67	
+      573 OP_LOADI	R58	45	
+      576 OP_LOADI	R59	94	
+      579 OP_LOADI	R60	177	
+      582 OP_LOADI	R61	49	
+      585 OP_LOADI	R62	73	
+      588 OP_LOADI	R63	82	
+      591 OP_LOADI	R64	62	
+      594 OP_LOADI	R65	78	
+      597 OP_LOADI	R66	82	
+      600 OP_LOADI	R67	180	
+      603 OP_LOADI	R68	149	
+      606 OP_LOADI	R69	230	
+      609 OP_LOADI	R70	49	
+      612 OP_LOADI	R71	62	
+      615 OP_LOADI	R72	88	
+      618 OP_LOADI	R73	228	
+      621 OP_LOADI	R74	170	
+      624 OP_LOADI	R75	24	
+      627 OP_LOADI	R76	168	
+      630 OP_LOADI	R77	239	
+      633 OP_LOADI_3	R78		
+      635 OP_ARRAY	R15	64	
+      638 OP_LOADI	R16	50	
+      641 OP_LOADI	R17	124	
+      644 OP_LOADI_1	R18		
+      646 OP_LOADI	R19	109	
+      649 OP_LOADI	R20	26	
+      652 OP_LOADI	R21	197	
+      655 OP_LOADI	R22	88	
+      658 OP_LOADI	R23	169	
+      661 OP_LOADI	R24	37	
+      664 OP_LOADI	R25	116	
+      667 OP_LOADI	R26	81	
+      670 OP_LOADI	R27	90	
+      673 OP_LOADI	R28	37	
+      676 OP_LOADI	R29	21	
+      679 OP_LOADI	R30	144	
+      682 OP_LOADI	R31	190	
+      685 OP_LOADI	R32	72	
+      688 OP_LOADI	R33	253	
+      691 OP_LOADI	R34	179	
+      694 OP_LOADI	R35	25	
+      697 OP_LOADI	R36	78	
+      700 OP_LOADI	R37	15	
+      703 OP_LOADI	R38	64	
+      706 OP_LOADI	R39	180	
+      709 OP_LOADI	R40	69	
+      712 OP_LOADI	R41	91	
+      715 OP_LOADI	R42	37	
+      718 OP_LOADI	R43	68	
+      721 OP_LOADI_0	R44		
+      723 OP_LOADI	R45	142	
+      726 OP_LOADI	R46	156	
+      729 OP_LOADI	R47	180	
+      732 OP_LOADI	R48	133	
+      735 OP_LOADI	R49	112	
+      738 OP_LOADI	R50	40	
+      741 OP_LOADI	R51	59	
+      744 OP_LOADI	R52	19	
+      747 OP_LOADI	R53	165	
+      750 OP_LOADI	R54	157	
+      753 OP_LOADI	R55	53	
+      756 OP_LOADI	R56	216	
+      759 OP_LOADI	R57	162	
+      762 OP_LOADI	R58	92	
+      765 OP_LOADI	R59	226	
+      768 OP_LOADI	R60	22	
+      771 OP_LOADI	R61	190	
+      774 OP_LOADI	R62	246	
+      777 OP_LOADI	R63	32	
+      780 OP_LOADI	R64	216	
+      783 OP_LOADI	R65	150	
+      786 OP_LOADI	R66	171	
+      789 OP_LOADI	R67	117	
+      792 OP_LOADI	R68	75	
+      795 OP_LOADI	R69	150	
+      798 OP_LOADI	R70	206	
+      801 OP_LOADI	R71	153	
+      804 OP_LOADI	R72	69	
+      807 OP_LOADI	R73	122	
+      810 OP_LOADI	R74	49	
+      813 OP_LOADI	R75	100	
+      816 OP_LOADI	R76	171	
+      819 OP_LOADI	R77	39	
+      822 OP_LOADI	R78	91	
+      825 OP_LOADI_5	R79		
+      827 OP_ARRAY	R16	64	
+      830 OP_LOADI	R17	225	
+      833 OP_LOADI	R18	240	
+      836 OP_LOADI	R19	174	
+      839 OP_LOADI	R20	143	
+      842 OP_LOADI	R21	127	
+      845 OP_LOADI	R22	149	
+      848 OP_LOADI	R23	12	
+      851 OP_LOADI	R24	162	
+      854 OP_LOADI	R25	97	
+      857 OP_LOADI	R26	88	
+      860 OP_LOADI	R27	42	
+      863 OP_LOADI	R28	14	
+      866 OP_LOADI	R29	91	
+      869 OP_LOADI	R30	206	
+      872 OP_LOADI	R31	153	
+      875 OP_LOADI	R32	23	
+      878 OP_LOADI	R33	162	
+      881 OP_LOADI	R34	184	
+      884 OP_LOADI	R35	143	
+      887 OP_LOADI	R36	65	
+      890 OP_LOADI	R37	237	
+      893 OP_LOADI	R38	139	
+      896 OP_LOADI	R39	199	
+      899 OP_LOADI	R40	123	
+      902 OP_LOADI	R41	10	
+      905 OP_LOADI	R42	202	
+      908 OP_LOADI	R43	198	
+      911 OP_LOADI_4	R44		
+      913 OP_LOADI	R45	27	
+      916 OP_LOADI	R46	246	
+      919 OP_LOADI	R47	190	
+      922 OP_LOADI	R48	156	
+      925 OP_LOADI_3	R49		
+      927 OP_LOADI	R50	181	
+      930 OP_LOADI	R51	168	
+      933 OP_LOADI	R52	109	
+      936 OP_LOADI	R53	142	
+      939 OP_LOADI_4	R54		
+      941 OP_LOADI	R55	161	
+      944 OP_LOADI	R56	14	
+      947 OP_LOADI	R57	204	
+      950 OP_LOADI	R58	135	
+      953 OP_LOADI	R59	54	
+      956 OP_LOADI	R60	194	
+      959 OP_LOADI	R61	246	
+      962 OP_LOADI	R62	218	
+      965 OP_LOADI	R63	213	
+      968 OP_LOADI	R64	147	
+      971 OP_LOADI	R65	159	
+      974 OP_LOADI	R66	120	
+      977 OP_LOADI	R67	209	
+      980 OP_LOADI	R68	204	
+      983 OP_LOADI	R69	90	
+      986 OP_LOADI	R70	61	
+      989 OP_LOADI	R71	80	
+      992 OP_LOADI	R72	159	
+      995 OP_LOADI	R73	129	
+      998 OP_LOADI	R74	86	
+      1001 OP_LOADI	R75	253	
+      1004 OP_LOADI	R76	149	
+      1007 OP_LOADI	R77	114	
+      1010 OP_LOADI	R78	79	
+      1013 OP_LOADI_1	R79		
+      1015 OP_LOADI	R80	154	
+      1018 OP_ARRAY	R17	64	
+      1021 OP_LOADI	R18	124	
+      1024 OP_LOADI	R19	37	
+      1027 OP_LOADI	R20	49	
+      1030 OP_LOADI	R21	30	
+      1033 OP_LOADI	R22	189	
+      1036 OP_LOADI	R23	207	
+      1039 OP_LOADI	R24	81	
+      1042 OP_LOADI	R25	89	
+      1045 OP_LOADI	R26	35	
+      1048 OP_LOADI	R27	188	
+      1051 OP_LOADI	R28	220	
+      1054 OP_LOADI	R29	133	
+      1057 OP_LOADI	R30	222	
+      1060 OP_LOADI	R31	120	
+      1063 OP_LOADI	R32	35	
+      1066 OP_LOADI	R33	81	
+      1069 OP_LOADI	R34	133	
+      1072 OP_LOADI	R35	153	
+      1075 OP_LOADI	R36	196	
+      1078 OP_LOADI_6	R37		
+      1080 OP_LOADI	R38	88	
+      1083 OP_LOADI	R39	138	
+      1086 OP_LOADI	R40	100	
+      1089 OP_LOADI	R41	50	
+      1092 OP_LOADI	R42	243	
+      1095 OP_LOADI	R43	92	
+      1098 OP_LOADI	R44	154	
+      1101 OP_LOADI	R45	152	
+      1104 OP_LOADI	R46	40	
+      1107 OP_LOADI	R47	200	
+      1110 OP_LOADI	R48	102	
+      1113 OP_LOADI	R49	215	
+      1116 OP_LOADI	R50	168	
+      1119 OP_LOADI	R51	9	
+      1122 OP_LOADI	R52	213	
+      1125 OP_LOADI	R53	216	
+      1128 OP_LOADI	R54	104	
+      1131 OP_LOADI	R55	157	
+      1134 OP_LOADI	R56	139	
+      1137 OP_LOADI	R57	120	
+      1140 OP_LOADI	R58	169	
+      1143 OP_LOADI	R59	28	
+      1146 OP_LOADI_1	R60		
+      1148 OP_LOADI	R61	158	
+      1151 OP_LOADI	R62	242	
+      1154 OP_LOADI	R63	44	
+      1157 OP_LOADI	R64	190	
+      1160 OP_LOADI	R65	148	
+      1163 OP_LOADI	R66	55	
+      1166 OP_LOADI	R67	145	
+      1169 OP_LOADI	R68	222	
+      1172 OP_LOADI	R69	158	
+      1175 OP_LOADI	R70	111	
+      1178 OP_LOADI	R71	26	
+      1181 OP_LOADI	R72	126	
+      1184 OP_LOADI	R73	221	
+      1187 OP_LOADI	R74	128	
+      1190 OP_LOADI	R75	91	
+      1193 OP_LOADI	R76	102	
+      1196 OP_LOADI	R77	250	
+      1199 OP_LOADI	R78	18	
+      1202 OP_LOADI	R79	15	
+      1205 OP_LOADI	R80	228	
+      1208 OP_LOADI	R81	209	
+      1211 OP_ARRAY	R18	64	
+      1214 OP_LOADI	R19	61	
+      1217 OP_LOADI	R20	103	
+      1220 OP_LOADI	R21	209	
+      1223 OP_LOADI_3	R22		
+      1225 OP_LOADI	R23	252	
+      1228 OP_LOADI	R24	110	
+      1231 OP_LOADI	R25	171	
+      1234 OP_LOADI	R26	193	
+      1237 OP_LOADI	R27	18	
+      1240 OP_LOADI	R28	106	
+      1243 OP_LOADI	R29	74	
+      1246 OP_LOADI	R30	172	
+      1249 OP_LOADI	R31	52	
+      1252 OP_LOADI	R32	234	
+      1255 OP_LOADI	R33	168	
+      1258 OP_LOADI	R34	200	
+      1261 OP_LOADI	R35	69	
+      1264 OP_LOADI	R36	221	
+      1267 OP_LOADI	R37	117	
+      1270 OP_LOADI	R38	165	
+      1273 OP_LOADI	R39	146	
+      1276 OP_LOADI	R40	122	
+      1279 OP_LOADI	R41	114	
+      1282 OP_LOADI	R42	189	
+      1285 OP_LOADI	R43	157	
+      1288 OP_LOADI	R44	248	
+      1291 OP_LOADI	R45	150	
+      1294 OP_LOADI	R46	146	
+      1297 OP_LOADI	R47	16	
+      1300 OP_LOADI	R48	157	
+      1303 OP_LOADI	R49	41	
+      1306 OP_LOADI	R50	132	
+      1309 OP_LOADI	R51	59	
+      1312 OP_LOADI_4	R52		
+      1314 OP_LOADI	R53	161	
+      1317 OP_LOADI	R54	44	
+      1320 OP_LOADI	R55	69	
+      1323 OP_LOADI	R56	220	
+      1326 OP_LOADI	R57	117	
+      1329 OP_LOADI	R58	248	
+      1332 OP_LOADI	R59	193	
+      1335 OP_LOADI	R60	188	
+      1338 OP_LOADI	R61	100	
+      1341 OP_LOADI	R62	59	
+      1344 OP_LOADI	R63	118	
+      1347 OP_LOADI	R64	59	
+      1350 OP_LOADI	R65	149	
+      1353 OP_LOADI	R66	67	
+      1356 OP_LOADI	R67	67	
+      1359 OP_LOADI	R68	34	
+      1362 OP_LOADI	R69	160	
+      1365 OP_LOADI	R70	42	
+      1368 OP_LOADI	R71	120	
+      1371 OP_LOADI	R72	143	
+      1374 OP_LOADI	R73	115	
+      1377 OP_LOADI	R74	88	
+      1380 OP_LOADI	R75	187	
+      1383 OP_LOADI	R76	132	
+      1386 OP_LOADI	R77	149	
+      1389 OP_LOADI	R78	107	
+      1392 OP_LOADI	R79	66	
+      1395 OP_LOADI	R80	178	
+      1398 OP_LOADI	R81	35	
+      1401 OP_LOADI	R82	240	
+      1404 OP_ARRAY	R19	64	
+      1407 OP_LOADI	R20	181	
+      1410 OP_LOADI	R21	103	
+      1413 OP_LOADI	R22	46	
+      1416 OP_LOADI	R23	200	
+      1419 OP_LOADI	R24	182	
+      1422 OP_LOADI	R25	144	
+      1425 OP_LOADI	R26	61	
+      1428 OP_LOADI	R27	212	
+      1431 OP_LOADI	R28	122	
+      1434 OP_LOADI	R29	251	
+      1437 OP_LOADI	R30	31	
+      1440 OP_LOADI	R31	219	
+      1443 OP_LOADI	R32	216	
+      1446 OP_LOADI	R33	222	
+      1449 OP_LOADI	R34	44	
+      1452 OP_LOADI	R35	71	
+      1455 OP_LOADI	R36	52	
+      1458 OP_LOADI	R37	174	
+      1461 OP_LOADI	R38	231	
+      1464 OP_LOADI	R39	43	
+      1467 OP_LOADI	R40	184	
+      1470 OP_LOADI	R41	159	
+      1473 OP_LOADI	R42	96	
+      1476 OP_LOADI	R43	38	
+      1479 OP_LOADI	R44	89	
+      1482 OP_LOADI	R45	31	
+      1485 OP_LOADI	R46	234	
+      1488 OP_LOADI	R47	21	
+      1491 OP_LOADI	R48	215	
+      1494 OP_LOADI	R49	236	
+      1497 OP_LOADI	R50	226	
+      1500 OP_LOADI	R51	143	
+      1503 OP_LOADI	R52	76	
+      1506 OP_LOADI	R53	75	
+      1509 OP_LOADI	R54	93	
+      1512 OP_LOADI	R55	58	
+      1515 OP_LOADI	R56	142	
+      1518 OP_LOADI	R57	163	
+      1521 OP_LOADI	R58	190	
+      1524 OP_LOADI_7	R59		
+      1526 OP_LOADI	R60	192	
+      1529 OP_LOADI	R61	158	
+      1532 OP_LOADI	R62	248	
+      1535 OP_LOADI	R63	33	
+      1538 OP_LOADI	R64	219	
+      1541 OP_LOADI	R65	233	
+      1544 OP_LOADI	R66	17	
+      1547 OP_LOADI	R67	220	
+      1550 OP_LOADI	R68	23	
+      1553 OP_LOADI	R69	125	
+      1556 OP_LOADI	R70	94	
+      1559 OP_LOADI	R71	237	
+      1562 OP_LOADI	R72	57	
+      1565 OP_LOADI	R73	72	
+      1568 OP_LOADI	R74	59	
+      1571 OP_LOADI	R75	28	
+      1574 OP_LOADI	R76	126	
+      1577 OP_LOADI	R77	197	
+      1580 OP_LOADI	R78	165	
+      1583 OP_LOADI_2	R79		
+      1585 OP_LOADI	R80	22	
+      1588 OP_LOADI_5	R81		
+      1590 OP_LOADI	R82	231	
+      1593 OP_LOADI	R83	140	
+      1596 OP_ARRAY	R20	64	
+      1599 OP_LOADI	R21	129	
+      1602 OP_LOADI	R22	149	
+      1605 OP_LOADI	R23	118	
+      1608 OP_LOADI	R24	148	
+      1611 OP_LOADI	R25	35	
+      1614 OP_LOADI	R26	197	
+      1617 OP_LOADI	R27	221	
+      1620 OP_LOADI	R28	194	
+      1623 OP_LOADI	R29	93	
+      1626 OP_LOADI	R30	81	
+      1629 OP_LOADI	R31	153	
+      1632 OP_LOADI	R32	173	
+      1635 OP_LOADI	R33	163	
+      1638 OP_LOADI	R34	20	
+      1641 OP_LOADI	R35	76	
+      1644 OP_LOADI	R36	46	
+      1647 OP_LOADI	R37	41	
+      1650 OP_LOADI_7	R38		
+      1652 OP_LOADI	R39	145	
+      1655 OP_LOADI	R40	47	
+      1658 OP_LOADI	R41	164	
+      1661 OP_LOADI	R42	209	
+      1664 OP_LOADI	R43	99	
+      1667 OP_LOADI	R44	20	
+      1670 OP_LOADI	R45	101	
+      1673 OP_LOADI	R46	236	
+      1676 OP_LOADI	R47	225	
+      1679 OP_LOADI	R48	9	
+      1682 OP_LOADI	R49	197	
+      1685 OP_LOADI	R50	100	
+      1688 OP_LOADI	R51	213	
+      1691 OP_LOADI	R52	188	
+      1694 OP_LOADI	R53	57	
+      1697 OP_LOADI	R54	105	
+      1700 OP_LOADI	R55	164	
+      1703 OP_LOADI	R56	149	
+      1706 OP_LOADI	R57	243	
+      1709 OP_LOADI	R58	37	
+      1712 OP_LOADI	R59	181	
+      1715 OP_LOADI	R60	50	
+      1718 OP_LOADI	R61	167	
+      1721 OP_LOADI	R62	127	
+      1724 OP_LOADI	R63	70	
+      1727 OP_LOADI	R64	68	
+      1730 OP_LOADI	R65	64	
+      1733 OP_LOADI	R66	73	
+      1736 OP_LOADI	R67	104	
+      1739 OP_LOADI	R68	34	
+      1742 OP_LOADI	R69	129	
+      1745 OP_LOADI	R70	45	
+      1748 OP_LOADI	R71	121	
+      1751 OP_LOADI	R72	184	
+      1754 OP_LOADI	R73	91	
+      1757 OP_LOADI	R74	245	
+      1760 OP_LOADI	R75	145	
+      1763 OP_LOADI	R76	36	
+      1766 OP_LOADI	R77	67	
+      1769 OP_LOADI	R78	147	
+      1772 OP_LOADI	R79	95	
+      1775 OP_LOADI	R80	46	
+      1778 OP_LOADI	R81	15	
+      1781 OP_LOADI	R82	63	
+      1784 OP_LOADI	R83	134	
+      1787 OP_LOADI	R84	192	
+      1790 OP_ARRAY	R21	64	
+      1793 OP_ARRAY	R14	8	
+      1796 OP_MOVE	R10	R14		; R10:wanted
+      1799 OP_JMP		2065
+      1802 OP_GETCONST	R14	:Cipher
+      1805 OP_SEND	R14	:new	0
+      1809 OP_MOVE	R11	R14		; R11:cipher
+      1812 OP_MOVE	R14	R3		; R3:content
+      1815 OP_MOVE	R15	R4		; R4:i
+      1818 OP_SEND	R14	:[]	1
+      1822 OP_MOVE	R15	R3		; R3:content
+      1825 OP_MOVE	R16	R4		; R4:i
+      1828 OP_ADDI	R16	16
+      1831 OP_SEND	R15	:[]	1
+      1835 OP_ADD	R14	R15
+      1837 OP_MOVE	R15	R3		; R3:content
+      1840 OP_MOVE	R16	R4		; R4:i
+      1843 OP_ADDI	R16	16
+      1846 OP_SEND	R15	:[]	1
+      1850 OP_ADD	R14	R15
+      1852 OP_MOVE	R15	R3		; R3:content
+      1855 OP_MOVE	R16	R4		; R4:i
+      1858 OP_ADDI	R16	8
+      1861 OP_SEND	R15	:[]	1
+      1865 OP_ADD	R14	R15
+      1867 OP_MOVE	R15	R3		; R3:content
+      1870 OP_MOVE	R16	R4		; R4:i
+      1873 OP_ADDI	R16	24
+      1876 OP_SEND	R15	:[]	1
+      1880 OP_ADD	R14	R15
+      1882 OP_MOVE	R15	R3		; R3:content
+      1885 OP_MOVE	R16	R4		; R4:i
+      1888 OP_ADDI	R16	16
+      1891 OP_SEND	R15	:[]	1
+      1895 OP_ADD	R14	R15
+      1897 OP_MOVE	R15	R3		; R3:content
+      1900 OP_MOVE	R16	R4		; R4:i
+      1903 OP_SEND	R15	:[]	1
+      1907 OP_ADD	R14	R15
+      1909 OP_MOVE	R15	R3		; R3:content
+      1912 OP_MOVE	R16	R4		; R4:i
+      1915 OP_ADDI	R16	16
+      1918 OP_SEND	R15	:[]	1
+      1922 OP_ADD	R14	R15
+      1924 OP_MOVE	R15	R3		; R3:content
+      1927 OP_MOVE	R16	R4		; R4:i
+      1930 OP_SEND	R15	:[]	1
+      1934 OP_ADD	R14	R15
+      1936 OP_MOVE	R15	R3		; R3:content
+      1939 OP_MOVE	R16	R4		; R4:i
+      1942 OP_ADDI	R16	16
+      1945 OP_SEND	R15	:[]	1
+      1949 OP_ADD	R14	R15
+      1951 OP_MOVE	R15	R3		; R3:content
+      1954 OP_MOVE	R16	R4		; R4:i
+      1957 OP_ADDI	R16	8
+      1960 OP_SEND	R15	:[]	1
+      1964 OP_ADD	R14	R15
+      1966 OP_MOVE	R15	R3		; R3:content
+      1969 OP_MOVE	R16	R4		; R4:i
+      1972 OP_ADDI	R16	16
+      1975 OP_SEND	R15	:[]	1
+      1979 OP_ADD	R14	R15
+      1981 OP_MOVE	R15	R3		; R3:content
+      1984 OP_MOVE	R16	R4		; R4:i
+      1987 OP_ADDI	R16	24
+      1990 OP_SEND	R15	:[]	1
+      1994 OP_ADD	R14	R15
+      1996 OP_MOVE	R15	R3		; R3:content
+      1999 OP_MOVE	R16	R4		; R4:i
+      2002 OP_ADDI	R16	16
+      2005 OP_SEND	R15	:[]	1
+      2009 OP_ADD	R14	R15
+      2011 OP_MOVE	R12	R14		; R12:cc
+      2014 OP_MOVE	R14	R11		; R11:cipher
+      2017 OP_MOVE	R15	R12		; R12:cc
+      2020 OP_STRING	R16	L(2)	; c*
+      2023 OP_SEND	R15	:unpack	1
+      2027 OP_SEND	R14	:hash	1
+      2031 OP_MOVE	R13	R14		; R13:output
+      2034 OP_MOVE	R15	R10		; R10:wanted
+      2037 OP_MOVE	R16	R4		; R4:i
+      2040 OP_SEND	R15	:[]	1
+      2044 OP_SEND	R14	:!=	1
+      2048 OP_JMPNOT	R14	2056	
+      2052 OP_LOADF	R14		
+      2054 OP_RETURN_BLK	R14		
+      2056 OP_MOVE	R14	R4		; R4:i
+      2059 OP_ADDI	R14	1
+      2062 OP_MOVE	R4	R14		; R4:i
+      2065 OP_MOVE	R14	R4		; R4:i
+      2068 OP_MOVE	R15	R3		; R3:content
+      2071 OP_SEND	R15	:length	0
+      2075 OP_LOADI_4	R16		
+      2077 OP_DIV	R15	R16
+      2079 OP_LT		R14	R15
+      2081 OP_JMPIF	R14	1802	
+      2085 OP_LOADT	R14		
+      2087 OP_RETURN	R14		
+
+irep 0x61b0f7787530 nregs=7 nlocals=1 pools=0 syms=5 reps=0 iseq=75
+      000 OP_ENTER	1:0:0:0:0:0:0
+      004 OP_SETUPVAR	R1	4	0
+      008 OP_LOADSELF	R2		
+      010 OP_GETUPVAR	R3	3	0
+      014 OP_GETUPVAR	R4	4	0
+      018 OP_SEND	R3	:[]	1
+      022 OP_SEND	R3	:ord	0
+      026 OP_SEND	R2	:validchar	1
+      030 OP_SETUPVAR	R2	5	0
+      034 OP_GETUPVAR	R2	5	0
+      038 OP_LOADI__1	R3		
+      040 OP_EQ		R2	R3
+      042 OP_JMPNOT	R2	050	
+      046 OP_LOADF	R2		
+      048 OP_RETURN_BLK	R2		
+      050 OP_GETUPVAR	R2	5	0
+      054 OP_SEND	R2	:chr	0
+      058 OP_GETUPVAR	R3	3	0
+      062 OP_GETUPVAR	R4	4	0
+      066 OP_MOVE	R5	R2	
+      069 OP_SEND	R3	:[]=	2
+      073 OP_RETURN	R2		
+
+irep 0x61b0f7787600 nregs=7 nlocals=1 pools=0 syms=5 reps=0 iseq=69
+      000 OP_ENTER	1:0:0:0:0:0:0
+      004 OP_SETUPVAR	R1	9	0
+      008 OP_GETUPVAR	R2	3	0
+      012 OP_GETUPVAR	R3	9	0
+      016 OP_SEND	R2	:[]	1
+      020 OP_SEND	R2	:ord	0
+      024 OP_SETUPVAR	R2	5	0
+      028 OP_GETUPVAR	R2	8	0
+      032 OP_GETUPVAR	R3	5	0
+      036 OP_SEND	R2	:^	1
+      040 OP_GETUPVAR	R3	9	0
+      044 OP_SEND	R2	:^	1
+      048 OP_SEND	R2	:chr	0
+      052 OP_GETUPVAR	R3	3	0
+      056 OP_GETUPVAR	R4	9	0
+      060 OP_MOVE	R5	R2	
+      063 OP_SEND	R3	:[]=	2
+      067 OP_RETURN	R2		
+
+irep 0x61b0f77876c0 nregs=3 nlocals=1 pools=0 syms=0 reps=0 iseq=12
+      000 OP_ENTER	1:0:0:0:0:0:0
+      004 OP_SETUPVAR	R1	4	0
+      008 OP_LOADNIL	R2		
+      010 OP_RETURN	R2		
+
+false
