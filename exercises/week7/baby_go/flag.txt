@@ -1,0 +1,7 @@
+O*******   JUNK AAAABBBBCCCCDDDD   *******O
+                                           
+                                           
+flag{ISEC-42115cad00f8c4a0495bffa97d2ca3a8}
+                                           
+                                           
+O*******   JUNK EEEEFFFFGGGGHHHH   *******O
