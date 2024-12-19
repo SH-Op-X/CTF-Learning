@@ -1,0 +1,91 @@
+  0 LOAD_GLOBAL              0 (input)
+  2 LOAD_CONST               1 ('plz input your flag:')
+  4 CALL_FUNCTION            1
+  6 STORE_FAST               0 (a)
+
+  8 LOAD_CONST               2 (25)
+ 10 LOAD_CONST               3 (108)
+ 12 LOAD_CONST               3 (108)
+ 14 LOAD_CONST               4 (176)
+ 16 LOAD_CONST               5 (18)
+ 18 LOAD_CONST               3 (108)
+ 20 LOAD_CONST               6 (110)
+ 22 LOAD_CONST               7 (177)
+ 24 LOAD_CONST               8 (64)
+ 26 LOAD_CONST               9 (29)
+ 28 LOAD_CONST              10 (134)
+ 30 LOAD_CONST               9 (29)
+ 32 LOAD_CONST              11 (187)
+ 34 LOAD_CONST              12 (103)
+ 36 LOAD_CONST              13 (32)
+ 38 LOAD_CONST              14 (139)
+ 40 LOAD_CONST              15 (144)
+ 42 LOAD_CONST              16 (179)
+ 44 LOAD_CONST              10 (134)
+ 46 LOAD_CONST               7 (177)
+ 48 LOAD_CONST              13 (32)
+ 50 LOAD_CONST              17 (24)
+ 52 LOAD_CONST              15 (144)
+ 54 LOAD_CONST               2 (25)
+ 56 LOAD_CONST              18 (111)
+ 58 LOAD_CONST              19 (14)
+ 60 LOAD_CONST              18 (111)
+ 62 LOAD_CONST              19 (14)
+ 64 BUILD_LIST              28
+ 66 STORE_FAST               1 (c)
+
+ 68 LOAD_GLOBAL              1 (len)
+ 70 LOAD_FAST                0 (a)
+ 72 CALL_FUNCTION            1
+ 74 LOAD_CONST              20 (28)
+ 76 COMPARE_OP               3 (!=)
+ 78 POP_JUMP_IF_FALSE       92
+
+ 80 LOAD_GLOBAL              2 (print)
+ 82 LOAD_CONST              21 ('wrong length')
+ 84 CALL_FUNCTION            1
+ 86 POP_TOP
+
+ 88 LOAD_CONST              22 (0)
+ 90 RETURN_VALUE
+
+ 92 LOAD_GLOBAL              3 (range)
+ 94 LOAD_GLOBAL              1 (len)
+ 96 LOAD_FAST                0 (a)
+ 98 CALL_FUNCTION            1
+100 CALL_FUNCTION            1
+102 GET_ITER
+104 FOR_ITER                46 (to 152)
+106 STORE_FAST               2 (i)
+
+108 LOAD_GLOBAL              4 (ord)
+110 LOAD_FAST                0 (a)
+112 LOAD_FAST                2 (i)
+114 BINARY_SUBSCR
+116 CALL_FUNCTION            1
+118 LOAD_CONST              23 (39)
+120 BINARY_MULTIPLY
+122 LOAD_CONST              24 (196)
+124 BINARY_MODULO
+126 LOAD_FAST                1 (c)
+128 LOAD_FAST                2 (i)
+130 BINARY_SUBSCR
+132 COMPARE_OP               3 (!=)
+134 POP_JUMP_IF_FALSE      104
+
+136 LOAD_GLOBAL              2 (print)
+138 LOAD_CONST              25 ('wrong')
+140 CALL_FUNCTION            1
+142 POP_TOP
+
+144 POP_TOP
+146 LOAD_CONST               0 (None)
+148 RETURN_VALUE
+150 JUMP_ABSOLUTE          104
+
+152 LOAD_GLOBAL              2 (print)
+154 LOAD_CONST              26 ('win')
+156 CALL_FUNCTION            1
+158 POP_TOP
+160 LOAD_CONST               0 (None)
+162 RETURN_VALUE
