@@ -1,0 +1,3 @@
+var1 = (0x4d494b555859 ^ 0x123456789abc ^ 0x3a1e2d49f196) % 0x666666abcdef
+var0 = ((0xffffffffffff-0xa7a7b3cfa9cc) ^ ((0x02 * 0x09a90782) + ((0x22 + 0x1ce3 + 0x1d)<<0x20)))
+print(bytes.fromhex(hex(var0)[2:])+bytes.fromhex(hex(var1)[2:]))
